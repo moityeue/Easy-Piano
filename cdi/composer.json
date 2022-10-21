@@ -1,0 +1,9 @@
+{
+    "autoload": {
+        "classmap": ["SPIAN/Classes", "SPIAN/Controllers", "SPIAN/Models", "SPIAN/views"]
+    },
+    "require": {
+        "altorouter/altorouter": "1.2.0",
+        "twig/twig": "^3.4"
+    }
+}

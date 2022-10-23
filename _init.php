@@ -2,7 +2,7 @@
 session_start();
 $dossier_server_path = '/php/Easy-Piano';
 
-$bdd = new PDO('mysql:host=localhost;dbname=stage2022;charset=utf8','root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=stage_spian;charset=utf8','root', '');
 
 
 function trouve_outil_id($dossier) {

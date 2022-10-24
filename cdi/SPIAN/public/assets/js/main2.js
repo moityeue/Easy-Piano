@@ -43,7 +43,6 @@ notes.forEach((item) => {
         }
     })
 })
-
 //chrono//
 timeLeft = 10;
 timeOut = document.querySelector('time');
@@ -57,8 +56,6 @@ function countdown() {
 
 setTimeout(countdown, 1000);
 })
-
-
 
    
 

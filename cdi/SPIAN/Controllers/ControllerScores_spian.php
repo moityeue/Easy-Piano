@@ -1,10 +1,10 @@
 <?php
 
-class ControllerScores extends ControllerTwig {
+class ControllerScores_spian extends ControllerTwig {
     public static function allScores() {
         $loader = new Twig\Loader\FilesystemLoader('./views');
         $twig = ControllerTwig::twigControl();
-        $manager = new ModelScores();
+        $manager = new ModelScores_spian();
         $score = $manager->humain_scores($manager);
          echo $twig->render('templates\homepage.twig'); 
     }

@@ -1,5 +1,5 @@
 <?php
-class Description extends Classes {
+class Description_spian extends Classes {
     private $_note_name;
     private $_description_note;
     private $_english_notes;

@@ -9,8 +9,8 @@ else if (isset($_SESSION['retour_page'])) $retour=$_SESSION['retour_page']; else
 $_SESSION['outil_id'] = trouve_outil_id($_SERVER["PHP_SELF"]);
 
 
-require_once __DIR__ . '/../vendor\autoload.php';
-require_once  __DIR__ .'/../vendor\altorouter\altorouter\AltoRouter.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once  __DIR__ .'/../vendor/altorouter/altorouter/AltoRouter.php';
 
 //start alto router
 $router = new AltoRouter();
@@ -28,10 +28,10 @@ $router->map('GET', '/piano', 'ControllerSihumain#allHumain3', 'piano_page');//o
 
 $router->map('GET', '/ecoute', 'ControllerSihumain#allHuma', 'pageEcoute');
 
-$router->map('GET', '/theorie', 'ControllerNotes#humain_note', 'pageTheorie');
+// $router->map('GET', '/theorie', 'ControllerNotes_spian#humain_note', 'pageTheorie');
 
 
-// $router->map('GET', '/oreille', 'ControllerScores#allscores', 'scores');
+//  $router->map('GET', '/oreille', 'ControllerScores_spian#allscores', 'scores');
 
 $match = $router->match();
 if($match){

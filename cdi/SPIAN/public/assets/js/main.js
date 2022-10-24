@@ -22,11 +22,11 @@ let playSong =  (notesString, tempo) => {
         } else {
             clearInterval(interval);
         }
-    }, 400);
+    }, 200);
 }  
-playBtn.addEventListener('mousedown' , () => {
-    playSong(happyBirthday, 1);
-})                
+// playBtn.addEventListener('mousedown' , () => {
+//     playSong(happyBirthday, 1);
+// })                
 playBtn2.addEventListener('mousedown' , () => {
     playSong(happyBirthday, 1);
 })                

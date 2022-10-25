@@ -2,9 +2,10 @@
 const audioQuiz = document.querySelectorAll('div audio');
 const btnQuiz = document.getElementsByClassName('.notes');
 let playBtnQuiz = document.getElementById("tracks");
-let playHb = document.querySelector('.btn_list3');
+
 let rValue;
 let audio;
+
 
 const notes = document.querySelectorAll('.notes');
 const doM = document.querySelector('.do');
@@ -23,41 +24,54 @@ playBtnQuiz.addEventListener('click', (e) =>{
     var rValue = audioQuiz[rand];
     return rValue;    
 }
+
 let MaudioQuiz = [];
 let rValue = RandArray(audioQuiz);
 rValue.play();
-
+for(i= 0 ; i<audioQuiz.length   ; i++){}
 //click notes réponses-Comparaison des deux réponses + points//
 notes.forEach((item) => {
-
     item.addEventListener('click', function(e) {
-       
         if(e.target.id == rValue.innerText){
             alert('bravo'); 
-            alert(rValue); 
             if( e.target.id == rValue.innerText){
-                let point = 0;
-                let result = document.getElementById('score');
-                point ++;
             }
         }
     })
 })
-//chrono//
-timeLeft = 10;
-timeOut = document.querySelector('time');
-function countdown() {
-	timeLeft--;
-	document.getElementById("seconds").innerHTML = String( timeLeft );
-	if (timeLeft > 0) {
-        setTimeout(countdown, 1000);
-    }  
-};
 
-setTimeout(countdown, 1000);
+let faux = document.getElementById("faux");
+let juste = document.getElementById("juste");
+let nbJuste =0;
+let y = nbJuste++;
+let nbFaux = 0;
+let reponse = document.getElementById("reponse");
+let boutonValider = document.getElementById("boutonValider");
+question.content = "Quelle note as tu entendu?";
+let n = 0;
+console.log(rValue.innerText);
+boutonValider.onclick= function () {
+    let score = document.getElementById("score");
+    if (reponse.value.toLowerCase() === rValue.innerText){
+        reponse.value= "bravo!!!";  
+        for(let nbJuste = 0; nbJuste <= audioQuiz.length ; nbJuste++){
+          console.log(nbJuste++);
+        }
+        
+    } else {
+        reponse.value= ":-(";
+        nbFaux += 1;
+        faux.textContent = nbFaux;
+    }
+    setTimeout(function () {reponse.value=""},2000);
+}
+reponse.addEventListener('keydown', function(e){
+
+})
 })
 
-   
+
+
 
 
 

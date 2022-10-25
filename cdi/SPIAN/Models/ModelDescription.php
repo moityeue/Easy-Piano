@@ -1,5 +1,5 @@
 <?php
-class ModelDescription_spian extends Model {
+class ModelDescription extends Model {
     public function humain_descriptions() {
         $db = $this->getDb();
         $req = ("SELECT `note_name`, `description_notes`, `english_notes`, `allemand_notes`, `image_notes` FROM `description_spian`");

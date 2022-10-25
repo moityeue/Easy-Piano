@@ -11,22 +11,22 @@
 <header>
     <div class="entete">
        <a href="oreille.html"> <img class="img1" src="images\retour 11.png" alt=""></a>
-        {# <div class="title">
-            <h1>Bienvenue sur Easy Piano</h1>
-        </div> #}
+        <div class="title">
+          {% for humains in humain %}
+              <h1 class="title">Welcome {{ (humain[2].getHumain_login()) }}</h1>
+          {% endfor %}
+        </div> 
         <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
     </div>
     <nav>
         <div class="main_pages">
-            <a class="main_pages1" href="">Ecoute Musicale</a>
-            <a class="main_pages2" href="/{{ base }}views/templates\oreille">Oreille Musicale</a>
+            <a class="main_pages1" href="ecoute">Ecoute Musicale</a>
+            <a class="main_pages2" href="oreille">Oreille Musicale</a>
         </div>
     </nav>
 </header>
         
-        {% for humains in humain %}
-        <h1 class="welcome">Welcome {{ (humain[2].getHumain_login()) }}</h1>
-        {% endfor %}
+     
            <h1 class="welcome2">⇩ Joue tes propres mélodies ⇩</h1>
       <div class="wrapper">
   <a class="cta" href="piano">
@@ -51,4 +51,4 @@
    </footer>
     <script src="public\assets\js\main.js"></script>
 </body>
-</html>
+</html> 

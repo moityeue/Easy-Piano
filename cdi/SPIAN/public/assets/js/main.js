@@ -5,7 +5,8 @@ let playBtn = document.querySelector('.piano__play-btn');
  let playBtn2 = document.querySelector('.btn_list3');
 let keys = [];
 
-let happyBirthday = `G1,G1,A1,G1,G1,B1,G1,G1,A1,G1,D1,C1,G1,G1,G1,E1,C1,B1,A1,F1,F1,E1,C1,D1,C1`;
+// let happyBirthday = `G1,G1,A1,G1,G1,B1,G1,G1,A1,G1,D1,C1,G1,G1,G1,E1,C1,B1,A1,F1,F1,E1,C1,D1,C1`;
+let happyBirthday = `F4,F4,A4,G4,C4,B4`;
           
 
 //activation bouton play//                   
@@ -13,7 +14,7 @@ let playSong =  (notesString, tempo) => {
     let notes = notesString.split(',');
     let currentNote = 0;
     let mousedown = new Event('mousedown');
-
+    console.log(mousedown);
     let interval = setInterval(() => {
         if(currentNote < notes.length){
             let btn = document.querySelector(`[data-letter-note="${notes[currentNote]}"]`);
@@ -22,11 +23,11 @@ let playSong =  (notesString, tempo) => {
         } else {
             clearInterval(interval);
         }
-    }, 200);
+    }, 800);
 }  
-// playBtn.addEventListener('mousedown' , () => {
-//     playSong(happyBirthday, 1);
-// })                
+playBtn.addEventListener('mousedown' , () => {
+    playSong(happyBirthday, );
+})                
 playBtn2.addEventListener('mousedown' , () => {
     playSong(happyBirthday, 1);
 })                
@@ -37,11 +38,11 @@ let init = () => {
            let key = createKey('white', pianoNotes[j], i);
            key.dataset.keyboard = keyboardMap[j + (i-1) * 7];
            keyboard.appendChild(key);
-        
+           
+           
            if(j != 2 && j !=6){
             key = createKey('black', pianoNotes[j], i);
             key.dataset.keyboard = '↑+'  + keyboardMap[j + (i-1) * 7];
-
             let emptySpace = document.createElement('div');
             emptySpace.className = 'empty-space';
             emptySpace.appendChild(key);

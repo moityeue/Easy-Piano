@@ -483,6 +483,18 @@ header {
     .myButton:active {
     background: #144E75;
 }
+#container {
+    position: absolute;
+    top: 80%;
+    background: lightblue;
+    font-family: arial;
+    display: grid;
+    grid-row-gap: 5%;
+    grid-template-rows: minmax(50px,20%) minmax(50px,10%) auto;
+    justify-content: center;
+    justify-items: center;
+}
+
 .score {
     background-color: #0d4d89;
     width: 200px;
@@ -501,20 +513,78 @@ header {
 /* page 2*/
 .box_vizualizer2 {
     background-color: #217fd7;
-    top: 60%;
+    top: 40%;
     position: absolute;
     height: 200px;
     width: 800px;
     margin-bottom: 20%;
 }
+#container {
+    position: absolute;
+    background: #11589A;
+    font-family: arial;
+    display: grid;
+    grid-row-gap: 5%;
+    width: 40%;
+    height: 20%;
+    bottom: 10%;
+}
+#question {
+    grid-row: 1/2;
+    align-self: end;
+    text-align: center;
+    margin: 1% 5% 1% 5%;
+}
+#reponse {
+    height: 50%;
+    width: 30%;
+    text-align: center;
+    grid-row: 2/3;
+    border-radius: 2vh;
+    font-size: 2vh;
+    /* text-transform: lowercase; */
+}
+#boutonValider {
+    position: absolute;
+    bottom: 5%;
+    border-radius: 10px;
+    background-color :#7CB9E8;
+    height: 20%;
+    font-size: small;
+    justify-content: culumn;
+}
+#score {
+    height: 20px;
+    position: absolute;
+    top: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    grid-row: 4/5;
+    font-size: 4vh;
+}
+#juste {
+    color:chartreuse;
+}
+#faux {
+    color:red;
+}
 .notes {
     display: flex;
-    justify-content: space-around;
-    top: 100%;
+    top: 70%;
     position: absolute;
     height: 200px;
     width: 800px;
     margin-bottom: 20%;
+}
+.listNotes {
+    text-align: center;
+    height: 30px;
+    width: 600px;
+    position: absolute;
+    top: 65%;
+    display: flex;
+    justify-content: space-around;
 }
 .theoNotes {
     position: absolute;
@@ -593,7 +663,7 @@ span {
 .play_list {
     background-color: #2985DA;
     position: absolute;
-    top: 150%;
+    top: 40%;
     display: flex;
     justify-content: culumn;
     height: 500px;

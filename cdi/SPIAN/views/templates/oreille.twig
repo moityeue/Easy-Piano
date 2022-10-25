@@ -1,88 +1,74 @@
-
-{# <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Oreille Musicale</title>
+    <link rel="stylesheet" href="public/assets\css\style.css">
+    <title>Easy Piano🎹 | Oreille Musicale</title>
     <header>
         <div class="entete">
-            <img class="img1" src="images\retour 11.png" alt="">
+            <img class="img1" src="public\assets\images\retour 11.png" alt="">
             <div class="title">
                 <h1>Easy Piano</h1>
-                <p>L'application pour pianos</p>
             </div>
-            <img class="img2" src="images\Cdi.PNG" alt="">
+            <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
         </div>
         <nav>
             <div class="main_pages">
-                <a class="main_pages1" href="creation.html">Création</a>
-                <a class="main_pages2" href="ecoute.html">Ecoute</a>
+                <a class="main_pages1" href="./">Creation</a>
+                <a class="main_pages2" href="ecoute">Ecoute</a>
             </div>
         </nav>
     </header>
-        <h1 class="welcome">Welcome Albert</h1>
     <body>
-        <h1 class="titles">As tu une bonne oreille Musicale???</h1>
-        <p class="titless">1- Ecoutes les mélodies proposées tout en suivant les notes sur le clavier</p>
-    <div class="piano">
-        <div class="piano__body">
-            <div class="piano__speaker"></div>
-            <div class="piano__interface">
-                <div class="piano__controls">
-                    <h4 class="piano__heading">Piano</h4>
-                    <label><input type="radio" class="piano__control__option" name="control" value="letterNote" checked>Letter Notes</label>
-                    <label><input type="radio" class="piano__control__option" name="control" value="keyboard">Keyboard</label>
-                    <label><input type="radio" class="piano__control__option" name="control" value="none">None</label>
-                </div>
-                <div class="piano__autoplay">
-                  <h4 class="piano__heading">Autoplay</h4>  
-                  <select class="piano__song-list">
-                    <option value="2">Happy Birthday</option>
-                    <option value="1">Jingle Bells</option> 
-                  </select>
-                  <label>Tempo:
-                    <select class="piano__tempo">
-                        <option value="1">Easy</option>
-                        <option value="2" selected>Normal</option>
-                        <option value="3">Hard</option>
-                    </select>
-                  </label>
-                  <button class="piano__play-btn">Play</button>
-                </div>
-            </div>
-            <div class="piano__speaker"></div>
+        {# <h1 class="titles">As tu une bonne oreille musicale</h1> #}
+    <div class="box_vizualizer2">
+        <div id="clock">
+            <span id="seconds">10</span>
         </div>
-    <div class="piano__keyboard"></div>
-    <div class="paraf">
-        <p>Ecoutes ces mélodies faciles</p>
+        <button id="tracks">Play Quiz</button>
+        {# <div>
+            <audio src="public\assets\sounds2\DO.mp3">do</audio>
+            <audio src="public\assets\sounds2\RE.mp3">ré</audio>
+            <audio src="public\assets\sounds2\MI.mp3">mi</audio>
+            <audio src="public\assets\sounds2\FA.mp3">fa</audio>
+            <audio src="public\assets\sounds2\SOL.mp3">sol</audio>
+            <audio src="public\assets\sounds2\LA.mp3">la</audio>
+            <audio src="public\assets\sounds2\SI.mp3">si</audio>
+        </div> #}
     </div>
-    <div class="play_list">
-        <div class="titre">
-          <div class="titre1">
-              <p>1- Au clair de la lune</p>
-              <button class="btn_list1">Play</button>
-          </div>
-          <div class="titre2">
-              <p>2- Frère Jacques</p>
-              <button class="btn_list2">Play</button>
-          </div>
-          <div class="titre3">
-              <p>3- Happy Birthday</p>
-              <button class="btn_list3">Play</button>
-          </div>
-          <div class="titre4">
-              <p>4- Au clair de la lune</p>
-              <button class="btn_list4">Play</button>
-          </div>
-          <div class="titre5">
-              <p>5- Au clair de la lune</p>
-              <button class="btn_list5">Play</button>
-          </div>
-      </div>
-    <footer class="footer">   TCAO</footer>
-    <script src="js/main.js"></script>
+    <div class="onclick">
+        <audio class="click" src="public/assets\sounds2\DO.mp3"></audio>
+        <audio class="click" src="public/assets\sounds2\RE.mp3">ré</audio>
+        <audio class="click" src="public/assets\sounds2\MI.mp3">mi</audio>
+        <audio class="click" src="public/assets\sounds2\FA.mp3">fa</audio>
+        <audio class="click" src="public/assets\sounds2\SOL.mp3">sol</audio>
+        <audio class="click" src="public/assets\sounds2\LA.mp3">la</audio>
+        <audio class="click" src="public/assets\sounds2\SI.mp3">si</audio>
+    </div>
+    <div class="listNotes">
+            <h1 class="listNotesName">Voici la liste des notes: </h1>
+            <p>do</p>
+            <p>ré</p>
+            <p>mi</p>
+            <p>fa</p>
+            <p>sol</p>
+            <p>la</p>
+            <p>si</p>
+        </div>
+    </div>
+        <div id="container">
+        <p id="question"></p>
+        <input type="text" name="mot" maxlenght="10" id="reponse" autocomplete="off">
+        <p>Utilises ce bouton pour valider ta réponse</p>
+        <button id="boutonValider">Valider</button>
+        <div id="score">
+            <div id="faux">0</div>
+            <div id="juste">0</div>
+        </div>
+    </div>
+    
+    <script src="public\assets\js\main2.js"></script>
 </body>
-</html> #}
+</html>

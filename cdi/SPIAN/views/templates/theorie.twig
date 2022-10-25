@@ -1,4 +1,4 @@
-
+{# 
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +25,9 @@
     <button class="my" id="la">la</button>
     <button class="my" id="si">si</button>
 </div>
+   {% for notes in note %}
+        <h1 class="welcome">Welcome {{ (note[0].getnote_name()) }}</h1>
+        {% endfor %}
     <script src="js/main.js"></script>
 </body>
-</html> 
+</html>  #}

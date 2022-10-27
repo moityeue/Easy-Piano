@@ -12,7 +12,7 @@ class ControllerScores extends ControllerTwig {
     //     $loader = new Twig\Loader\FilesystemLoader('./views');
     //     $twig = ControllerTwig::twigControl();
     //     $manager = new ModelScores();
-    //     $scores = $manager->humain_scores($id);
-    //     echo $twig->render('templates\allScores.twig', ['humain_score' => $score]); 
+    //     $scores = $manager->humain_score();
+    //     echo $twig->render('templates\allScores.twig', ); 
     // }
 }

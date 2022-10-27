@@ -52,10 +52,10 @@ let n = 0;
 console.log(rValue.innerText);
 boutonValider.onclick= function () {
     let score = document.getElementById("score");
-    if (reponse.value.toLowerCase() === rValue.innerText){
+    if (reponse.value.toLowerCase() == rValue.innerText){
         reponse.value= "bravo!!!";  
         for(let nbJuste = 0; nbJuste <= audioQuiz.length ; nbJuste++){
-          console.log(nbJuste++);
+          
         }
         
     } else {
@@ -64,15 +64,9 @@ boutonValider.onclick= function () {
         faux.textContent = nbFaux;
     }
     setTimeout(function () {reponse.value=""},2000);
+
 }
 reponse.addEventListener('keydown', function(e){
 
 })
 })
-
-
-
-
-
-
-

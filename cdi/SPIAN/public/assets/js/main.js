@@ -119,22 +119,16 @@ let playSound = (key) => {
 init();
 
 window.addEventListener('click', (e) => {
-
     console.log(e);
     const circle = document.createElement('div')
     circle.className = 'welcome'
-    
     circle.style.top = `${e.pageY - 50}px`
     circle.style.left = `${e.pageX - 50}px`
-    
     document.body.appendChild(circle)
-    
     setTimeout(() => {
         circle.remove();
-    },1500);
-    
+    },1500)
 })
-
 
 
 

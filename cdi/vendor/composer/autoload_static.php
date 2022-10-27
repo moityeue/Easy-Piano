@@ -43,7 +43,7 @@ class ComposerStaticInit17f64e5c17013a1a9b1e13d9beae7dee
         'Arbustes_outil' => __DIR__ . '/../..' . '/SPIAN/Classes/Arbustes_outil.php',
         'Classes' => __DIR__ . '/../..' . '/SPIAN/Classes/Classes.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'ControllerDescription_spian' => __DIR__ . '/../..' . '/SPIAN/Controllers/ControllerDescription.php',
+        'ControllerDescription' => __DIR__ . '/../..' . '/SPIAN/Controllers/ControllerDescription.php',
         'ControllerNotes' => __DIR__ . '/../..' . '/SPIAN/Controllers/ControllerNotes.php',
         'ControllerScores' => __DIR__ . '/../..' . '/SPIAN/Controllers/ControllerScores.php',
         'ControllerSihumain' => __DIR__ . '/../..' . '/SPIAN/Controllers/ControllerSihumain.php',

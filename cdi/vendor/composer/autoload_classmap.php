@@ -10,7 +10,7 @@ return array(
     'Arbustes_outil' => $baseDir . '/SPIAN/Classes/Arbustes_outil.php',
     'Classes' => $baseDir . '/SPIAN/Classes/Classes.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
-    'ControllerDescription_spian' => $baseDir . '/SPIAN/Controllers/ControllerDescription.php',
+    'ControllerDescription' => $baseDir . '/SPIAN/Controllers/ControllerDescription.php',
     'ControllerNotes' => $baseDir . '/SPIAN/Controllers/ControllerNotes.php',
     'ControllerScores' => $baseDir . '/SPIAN/Controllers/ControllerScores.php',
     'ControllerSihumain' => $baseDir . '/SPIAN/Controllers/ControllerSihumain.php',

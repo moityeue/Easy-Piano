@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="public\assets\css\style.css">
     <title>Easy Piano🎹 | Ecoute Musicale</title>
     <header>
+      <h1 class="welcome3">⇩ Ecoutes ces mélodies connues ⇩</h1>
         <div class="entete">
             <img class="img1" src="public\assets\images\retour 11.png" alt="">
-            <div class="title">
+            {# <div class="title">
                 <h1>Easy Piano</h1>
-            </div>
+            </div> #}
             <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
         </div>
         <nav>
@@ -22,30 +23,101 @@
         </nav>
     </header>
         {# <h1 class="welcome">Welcome Albert</h1> #}
-    <body>
-      <div class="play_list">
-        <div class="titre">
-          <div class="titre1">
-              <p>1- Au clair de la lune</p>
-              <button class="btn_list1">Play</button>
-          </div>
-          <div class="titre2">
-              <p>2- Frère Jacques</p>
-              <button class="btn_list2">Play</button>
-          </div>
-          <div class="titre3">
-              <p>3- Happy Birthday</p>
-              <button class="btn_list3">Play</button>
-              <audio src="public\assets\sounds2\LA.mp3" class="au"id="aud"></audio>
-          </div>
-          <div class="titre4">
-              <p>4- Au clair de la lune</p>
-              <button class="btn_list4">Play</button>
-          </div>
-          <div class="titre5">
-              <p>5- Au clair de la lune</p>
-              <button class="btn_list5">Play</button>
-          </div>
-      </div>
 
-<script src="public\assets\js\main2.js"></script>
+    <div id="container2">
+        <div id="ecoute">
+            <p id="question2"></p>
+            <input id="input1" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
+            <p>Quel est le titre de ce morceau 1?</p>
+            <p id="anim_rep1" class="rep">Petit Papa Noël</p>
+            <button id="boutonValidation1">Valider</button>
+            <button id="un">Play</button>
+        </div> 
+        <div id="ecoute">
+            <p id="question2"></p>
+            <input id="input2" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
+            <p>Quel est le titre de cette chanson?</p>
+            <p id="anim_rep2">La panthère rose</p>
+            <button id="boutonValidation2">Valider</button>
+            <button id="deux">Play</button>
+        </div> 
+        <div id="ecoute">
+            <p id="question2"></p>
+            <input id="input3" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
+            <p>Quel est le titre de cette chanson?</p>
+            <p id="anim_rep3">Frère Jacques</p>
+            <button id="boutonValidation3">Valider</button>
+            <button id="trois">Play</button>
+        </div> 
+        <div id="ecoute">
+            <p id="question2"></p>
+            <input id="input4" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
+            <p>Quel est le titre de cette chanson?</p>
+            <p id="anim_rep4">Lettre à Elise</p>
+            <button id="boutonValidation4">Valider</button>
+            <button id="quatre">Play</button>
+        </div> 
+        <div id="ecoute">
+            <p id="question2"></p>
+            <input id="input5" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
+            <p>Quel est le titre de cette chanson?</p>
+            <p id="anim_rep5">Raiponce</p>
+            <button id="boutonValidation5">Valider</button>
+            <button id="cinq">Play</button>
+        </div> 
+        <div id="ecoute">
+            <p id="question2"></p>
+            <input id="input6" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
+            <p>Quel est le titre de cette chanson?</p>
+            <p id="anim_rep6">Les Choristes</p>
+            <button id="boutonValidation6">Valider</button>
+            <button id="six">Play</button>
+        </div> 
+        <div id="ecoute">
+            <p id="question2"></p>
+            <input id="input7" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
+            <p>Quel est le titre de cette chanson?</p>
+            <p id="anim_rep7">Ce rêve bleu</p>
+            <button id="boutonValidation7">Valider</button>
+            <button id="sept">Play</button>
+        </div> 
+        <div id="ecoute">
+            <p id="question2"></p>
+            <input id="input8" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
+            <p>Quel est le titre de cette chanson?</p>
+            <p id="anim_rep8">Joyeux anniversaire</p>
+            <button id="boutonValidation8">Valider</button>
+            <button id="huit">Play</button>
+        </div> 
+        <div id="ecoute">
+            <p id="question2"></p>
+            <input id="input9" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
+            <p>Quel est le titre de cette chanson?</p>
+            <p id="anim_rep9">Au clair de la lune </p>
+            <button id="boutonValidation9">Valider</button>
+            <button id="neuf">Play</button>
+        </div> 
+        <div id="ecoute">
+            <p id="question2"></p>
+            <input id="input10" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
+            <p>Quel est le titre de cette chanson?</p>
+            <p id="anim_rep10">La panthère rose</p>
+            <button id="boutonValidation10">Valider</button>
+            <button id="dix">Play</button>
+        </div> 
+        
+        {# <audio id="deux" src="musique\18436.mp3"></audio>
+        <audio id="trois" src="musique\18436.mp3"></audio>
+        <audio id="quatre" src="musique\18436.mp3"></audio>
+        <audio id="cinq" src="musique\18436.mp3"></audio>
+        <audio id="six" src="musique\18436.mp3"></audio>
+        <audio id="sept" src="musique\18436.mp3"></audio>
+        <audio id="huit" src="musique\18436.mp3"></audio>
+        <audio id="neuf" src="musique\18436.mp3"></audio>
+        <audio id="dix" src="musique\18436.mp3"></audio> #}
+</div>
+    <div id="score2">
+            <div id="faux2">0</div>
+            <div id="juste2">0</div>
+        </div>
+<script src="public\assets\js\main3.js"></script>

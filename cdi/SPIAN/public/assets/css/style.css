@@ -37,6 +37,7 @@ header {
     width: 60px;
     height: 20px;
     top: 5%;
+    left: 35%;
     position: absolute;
     z-index: 666;
     border-radius: 10px;
@@ -46,22 +47,6 @@ header {
     color: #FFFFFF;
     text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
     }
-    /* .welcome {
-        color: transparent;
-        background: #666666;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        background-clip: text;
-        text-shadow: 0px 1px 1px #2985DA;
-    }
-    .welcome {
-        color: transparent;
-        background: #666666;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        background-clip: text;
-        text-shadow: 0px 1px 1px #2985DA;
-    } */
     .link_piano  {
         position: absolute;
         top: 80%;
@@ -217,21 +202,19 @@ header {
 }
 .welcome2{
     position: absolute;
-    top: 35%;
+    top: 32%;
     left: 32%;
     font-weight: bold;
     font-size: 3rem;
-    color: #202c2d;
-    color: #444444;
-    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    color: #11589A;
+    text-shadow: 1px 3px 0 #969696, 1px 1px 5px #aba8a8;
     animation-duration: 3s;
     animation-name: glissement;
     animation-iteration-count: 20s;
 }
-.welcome3{
-    position: absolute;
-    top: 0;
-    /* left: 32%; */
+/* .welcome3{
+ 
+     left: 32%; 
     font-weight: bold;
     font-size: 3rem;
     color: #202c2d;
@@ -240,8 +223,17 @@ header {
     animation-duration: 3s;
     animation-name: glissement;
     animation-iteration-count: 20s;
+} */
+.welcome3 {
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #202c2d;
+    color: #444444;
+    text-shadow: 1px 3px 0 #969696, 1px 1px 5px #aba8a8;
 }
-
 @keyframes glissement {
     from {
       margin-top: 100%;
@@ -253,16 +245,6 @@ header {
       width: 100%;
     }
   }
-.welcome3 {
-    position: absolute;
-    top: 57%;
-    left: 35%;
-    font-weight: bold;
-    font-size: 2rem;
-    color: #202c2d;
-    color: #444444;
-    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
-}
 
 .main_pages {
     justify-content: space-between;
@@ -506,7 +488,7 @@ header {
     top: 80%;
     background: lightblue;
     font-family: arial;
-    display: grid;
+    display: flex;
     grid-row-gap: 5%;
     grid-template-rows: minmax(50px,20%) minmax(50px,10%) auto;
     justify-content: center;
@@ -529,13 +511,12 @@ header {
 }
 
 #play_question {
-   
-    border-radius: 10px;
-    background-color :#7CB9E8;
-    height: 20%;
-    font-size: small;
-    justify-content: culumn;
-    margin-left: 15%;
+border-radius: 10px;
+background-color :#7CB9E8;
+height: 20%;
+font-size: small;
+justify-content: culumn;
+margin-left: 15%;
 }
 
 .score {
@@ -573,7 +554,7 @@ header {
     height: 20%;
     bottom: 10%;
 }
-.anim_rep {
+.rep {
     display: none;
     /* text-transform: lowercase;  */
 }
@@ -581,15 +562,21 @@ header {
     margin-top:25%;
     margin-bottom: 5%;
     justify-content: culumn;
-    position: absolute;
     background: #11589A;
     font-family: arial;
-    display: grid;
+    display: block;
     grid-row-gap: 5%;
     width: 50%;
-    height: 100vh;
+    height: 50%;
+    padding: 40px;
 }
-
+#ecoute {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1%;
+ }
 #question {
     grid-row: 1/2;
     align-self: end;
@@ -638,6 +625,22 @@ header {
     height: 20%;
     font-size: small;
     justify-content: culumn;
+}
+.btn {
+    width: 7%;
+    color: rgb(17, 88, 154); font-size: 10px; line-height: 10px; padding: 4px; border-radius: 8px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
+    .myButton:hover {
+    background: #1C6EA4; }
+    .myButton:active {
+    background: #144E75;
+}
+.play {
+    width: 7%;
+    color: rgb(17, 88, 154); font-size: 10px; line-height: 10px; padding: 4px; border-radius: 8px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
+    .myButton:hover {
+    background: #1C6EA4; }
+    .myButton:active {
+    background: #144E75;
 }
 #container2 > p {
     position: absolute;

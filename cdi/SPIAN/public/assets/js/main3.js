@@ -91,24 +91,33 @@ let buto10 = document.getElementById("boutonValidation10");
 
 let point = 0;
 let faux =0;
+
+let nbBonneRep = document.getElementById("juste2");
+
+let nbMauvaiseRep = document.getElementById("faux2");
+
 for (let i = 0; i < 10; i++) {
 buto1.onclick = function ()  {
     if(repUser1.value == reponse1.innerText){
-        repUser1.value = ":-)";
+        repUser1.value = "✔";
         point+=1;
+        point.textContent = nbBonneRep;
        
     } else {
-        repUser1.value = ":-(" + reponse1.innerText;
+        repUser1.value = "❌" + reponse1.innerText;
         faux+=1;
+        faux.textContent = nbMauvaiseRep;
     }
+    // setTimeout(function () {repUser1.value="";2000})
     console.log(point);  
+    
 }
 buto2.onclick = function ()  {
     if(repUser2.value == reponse2.innerText){
-        repUser2.value = ":-)" ;
+        repUser2.value = "✔" ;
         point+=1;
     } else {
-        repUser2.value = ":-(" + reponse2.innerText;
+        repUser2.value = "❌" + reponse2.innerText;
         faux+=1;
     }
     console.log(point);  
@@ -116,85 +125,83 @@ buto2.onclick = function ()  {
 
 buto3.onclick = function ()  {
     if(repUser3.value == reponse3.innerText){
-        repUser3.value = ":-)" ;
+        repUser3.value = "✔" ;
         point+=1;
     } else {
-        repUser3.value = ":-(" + reponse3.innerText;
+        repUser3.value = "❌" + reponse3.innerText;
         faux+=1;
     }
     console.log(point);  
 }
 buto4.onclick = function ()  {
     if(repUser4.value == reponse4.innerText){
-        repUser4.value = ":-)";
+        repUser4.value = "✔";
         point+=1;
     } else {
-        repUser4.value = ":-(" + reponse4.innerText;
+        repUser4.value = "❌" + reponse4.innerText;
         faux+=1;
     }
     console.log(point);  
 }
 buto5.onclick = function ()  {
         if(repUser5.value == reponse5.innerText){
-        repUser5.value = ":-)";
+        repUser5.value = "✔";
         point+=1;
     } else {
-        repUser5.value = ":-(" + reponse5.innerText;
+        repUser5.value = "❌" + reponse5.innerText;
         faux+=1;
     }
     console.log(point);  
 }
 buto6.onclick = function ()  {
     if(repUser6.value == reponse6.innerText){
-        repUser6.value = ":-)";
+        repUser6.value = "✔";
         point+=1;
     } else {
-        repUser6.value = ":-(" + reponse6.innerText;
+        repUser6.value = "❌" + reponse6.innerText;
         faux+=1;
     }
     console.log(point);  
 }
 buto7.onclick = function ()  {
     if(repUser7.value == reponse7.innerText){
-        repUser7.value = ":-)";
+        repUser7.value = "✔";
         point+=1;
     } else {
-        repUser7.value = ":-(" + reponse7.innerText;
+        repUser7.value = "❌" + reponse7.innerText;
         faux+=1;
     }
     console.log(point);  
 }
 buto8.onclick = function ()  {
     if(repUser8.value == reponse8.innerText){
-        repUser8.value = ":-)";
+        repUser8.value = "✔";
         point+=1;
     } else {
-        repUser8.value = ":-(" + reponse8.innerText;
+        repUser8.value = "❌" + reponse8.innerText;
         faux+=1;
     }
     console.log(point);  
 }
 buto9.onclick = function ()  {
     if(repUser9.value == reponse9.innerText){
-        repUser9.value = ":-)";
+        repUser9.value = "✔";
         point+=1;
     } else {
-        repUser9.value = ":-(" + reponse9.innerText;
+        repUser9.value = "❌" + reponse9.innerText;
         faux+=1;
     }
     console.log(point);  
 }
 buto10.onclick = function ()  {
     if(repUser10.value == reponse10.innerText){
-        repUser10.value = ":-)";
+        repUser10.value = "✔";
         point+=1;
     } else {
-        repUser10.value = ":-(" + reponse10.innerText;
+        repUser10.value = "❌" + reponse10.innerText;
         faux+=1;
     }
      
 }
 }
-
-console.log(point); 
-console.log(faux); 
+console.log(nbBonneRep.innerText);

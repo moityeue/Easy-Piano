@@ -1,5 +1,5 @@
 let keyboard = document.querySelector('.piano__keyboard');
-let pianoNotes = ['C', 'D', 'E', 'F', 'G','A','B'];
+let pianoNotes = ['DO', 'RE', 'MI', 'FA', 'SOL','LA','SI'];
 let keyboardMap = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'A', 'Z', 'E', 'R', 'T', 'Y','U', 'I', 'O', 'P', 'Q', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'W', 'X', 'C', 'V', 'B', 'N'];
 let playBtn = document.querySelector('.piano__play-btn');
  let playBtn2 = document.querySelector('.btn_list3');

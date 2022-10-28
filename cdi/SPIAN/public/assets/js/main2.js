@@ -53,13 +53,13 @@ console.log(rValue.innerText);
 boutonValider.onclick= function () {
     let score = document.getElementById("score");
     if (reponse.value.toLowerCase() == rValue.innerText){
-        reponse.value= "bravo!!!";  
+        reponse.value= "✔";  
         for(let nbJuste = 0; nbJuste <= audioQuiz.length ; nbJuste++){
           
         }
         
     } else {
-        reponse.value= ":-(";
+        reponse.value= "❌";
         nbFaux += 1;
         faux.textContent = nbFaux;
     }

@@ -11,19 +11,19 @@
     const zikNeuf = new Audio('public/assets/sounds3/Au clair de la lune.mp3');
     const zikDix = new Audio('public/assets/sounds3/La panthère rose.mp3');
 
-    const un = document.getElementsById('un');
-    const deux = document.getElementById('deux');
-    const trois = document.getElementById('trois');
-    const quatre = document.getElementById('quatre');
-    const cinq = document.getElementById('cinq');
-    const six = document.getElementById('six');
-    const sept = document.getElementById('sept');
-    const huit = document.getElementById('huit');
-    const neuf = document.getElementById('neuf');
-    const dix = document.getElementById('dix');
+    // const un = document.getElementsById('un');
+    // const deux = document.getElementById('deux');
+    // const trois = document.getElementById('trois');
+    // const quatre = document.getElementById('quatre');
+    // const cinq = document.getElementById('cinq');
+    // const six = document.getElementById('six');
+    // const sept = document.getElementById('sept');
+    // const huit = document.getElementById('huit');
+    // const neuf = document.getElementById('neuf');
+    // const dix = document.getElementById('dix');
     
    
-console.log(btnUn);
+
     // deux.addEventListener('click', ()=>{
     //     zikDeux.play();
     // })
@@ -105,9 +105,16 @@ let buto10 = document.getElementById("boutonValidation10");
 
 let search = document.getElementById("searchResult");
 
-
-
-
+let un = document.getElementById("Petit Papa Noël");
+let deux = document.getElementById("La panthère rose");
+let trois = document.getElementById("Frère Jacques");
+let qutre = document.getElementById("Lettre à Elise");
+let cinq = document.getElementById("Raiponce");
+let six = document.getElementById("Les Choristes");
+let sept = document.getElementById("Ce rêve bleu");
+let huit = document.getElementById("Joyeux anniversaire");
+let neuf = document.getElementById("Au clair de la lune");
+let dix = document.getElementById("La panthère rose");
 
 
 

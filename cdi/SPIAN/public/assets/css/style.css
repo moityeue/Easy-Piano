@@ -25,7 +25,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #7CB9E8;
+    background: linear-gradient(#62a3e0, #2998ff);
 }
 header {
     display: flex;
@@ -33,26 +33,24 @@ header {
 }
 
 .title > h1{
+    font-size: 2em;
+    width: 100%;
     text-align: center;
-    width: 60px;
-    height: 20px;
-    top: 5%;
-    left: 35%;
     position: absolute;
+    top: 10%;
     z-index: 666;
     border-radius: 10px;
     transform: scale(0);
     transform-origin: center;
     animation: clickAnim 20s ease-in-out;/*l'animation dure 1sec de l'intérieur vers l'extérieur*/
     color: #FFFFFF;
-    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+    color: #11589A;
     }
     .link_piano  {
         position: absolute;
         top: 80%;
         left: 38%;
     }
- 
     @keyframes clickAnim {
     0% {
     transform: scale(0);
@@ -130,33 +128,14 @@ header {
     color: #ffff;
 }
 .entete {
-    display: block;
+    width: 100%;
+    display: flex;
     justify-content: space-between;
 }
 .title {
-    position: absolute;
-    top: 5%;
-    left: 30%;
-    right: 25%;
-    height: 100px;
-    width: 600px;
-}
-.title > h1 {
-   position: absolute;
-   top: 15%;
-    font-size: 3rem;
-    text-align: center;
-    height: 100%;
-    width: 100%;
-    color: #2a0e0e; 
-}
-.title > p {
-    font-size: 15px;
-    position: absolute;
     width: 100%;
     text-align: center;
-    bottom: 1%;
-    color: #5e5151;
+    color: #fff;
 }
 .titles {
    position: absolute;
@@ -189,6 +168,7 @@ header {
     right: 10%;
 }
 .welcome {
+    width: 100%;
     position: absolute;
     top: 10%;
     left: 43%;
@@ -200,14 +180,12 @@ header {
     -moz-background-clip: text;
     background-clip: text;
 }
-.welcome2{
-    position: absolute;
-    top: 32%;
-    left: 32%;
+.welcome2  {
+    width: 100%;
+    text-align: center;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #11589A;
-    text-shadow: 1px 3px 0 #969696, 1px 1px 5px #aba8a8;
     animation-duration: 3s;
     animation-name: glissement;
     animation-iteration-count: 20s;
@@ -258,17 +236,15 @@ header {
     .myButton:active {
     background: #144E75;
 }
-.main_pages {
-    justify-content: space-between;
+nav {
     position: absolute;
-    top: 20%;
-    height: 70px;
-    left: 0;
+    top: 30%;
     width: 100%;
+    height: 10%;
+    justify-content:space-between;
 }
 .main_pages1 {
     top: 15%;
-    height: 60%;
     position: absolute;
     left: 10%;
     background-color: #1D7BD1;
@@ -276,35 +252,36 @@ header {
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
-    padding-top: 1%;
+    height: 40%;
+    color: #fff;
+}
+.link {
+    width: 100%;
+    margin-top: 2%;
+    color: #ffff;
 }
 .main_pages2 {
-    top: 20%;
-    height: 60%;
+    top: 10%;
     position: absolute;
     right: 10%;
     background-color: #1D7BD1;
     width: 10%;
+    height: 40%;
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
-    padding-top: 1%;
+    color: #fff;
+    line-height: center;
 }
-.main_pages > a {
-    top: 20%;
-    height: 60%;
-    position: absolute;
-    right: 10%;
-    color: #ffff;
-}
+
 .wrapper {
- 
-    display: flex;
+    width: 100%;
     justify-content: center;
   }
   .cta {
     position:absolute;
-    top: 60%;
+    left: 42%;
+    top: 55%;
     display: flex;
     padding: 10px 45px;
     text-decoration: none;
@@ -548,11 +525,12 @@ margin-left: 15%;
 /* page 2*/
 .box_vizualizer2 {
     background-color: #217fd7;
-    top: 40%;
     position: absolute;
-    height: 200px;
-    width: 800px;
-    margin-bottom: 20%;
+    top: 50%;
+    height: 25%;
+    width: 40%;
+    text-align: center;
+    justify-content: center;
 }
 
 .box_vizualizer2 > .regles > p {
@@ -564,7 +542,7 @@ margin-left: 15%;
 }
 #reponse {
     position: absolute;
-    top: 70%;
+    top: 80%;
     height: 10px;
     width: 50px;
     background-color:#ffff;
@@ -592,8 +570,8 @@ margin-left: 15%;
     background: #144E75;
 }
 #container {
-    margin-top: 45%;
-    position: relative;
+    position: absolute;
+    top: 85%;
     background: #11589A;
     font-family: arial;
     display: flex;
@@ -822,6 +800,9 @@ margin-left: 15%;
     width: 800px;
     margin-bottom: 20%;
 }
+h1 > .listNotesName {
+    color: #fff;
+}
 .listNotes {
     text-align: center;
     height: 30px;
@@ -866,11 +847,11 @@ span {
     animation: text_btn 0.3s ease-in-out;
 }
 .box_vizualizer2 > h1 {
-    font-size: 1rem;
+    font-size: 2rem;
     width: 100%;
     text-align: center;
     color: transparent;
-    background: #666666;
+    background: #00436f;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
@@ -1017,33 +998,25 @@ span {
     border-radius: 10px;
 }
 .footer {
-    margin-top: 21.5%;
-    position: absolute;
-    height: 70px;
+    height: 11%;
     width: 100%;
-    background-color: #2985DA;
-}
-.footer > img {
     position: absolute;
-    top: 45%;
-    left: 47%;
-    height: 40px;
-    width: 100px;
+    bottom: 0;
+    background: linear-gradient(#2985DA, #0d4d89);
 }
-.footer > .name {
-    position: absolute;
-    top: 0;
-    height:20px ;
-   width: 100%;
-   text-align: center;
-}
+
 .footer >  .name2{
-    margin-right: 10%;
-    margin-top: 1%;
-    float: right;
+    position: absolute;
+    right: 10%;
+    top:40%;
 }
 .footer > .name1 {
-    margin-top: 1%;
-    margin-left: 10%;
-    float: left;
+    position: absolute;
+    left: 10%;
+    top:40%;
+}
+.footer > .name3 {
+    position: absolute;
+    left: 50%;
+    top:40%;
 }

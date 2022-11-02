@@ -4,32 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="./"><img class="img1" src="public\assets\images\retour 11.png" alt=""></a>
     <link rel="stylesheet" href="public/assets\css\style.css">
     <title>Easy Piano🎹 | Oreille Musicale</title>
     <header>
-        <div class="entete">
-            <img class="img1" src="public\assets\images\retour 11.png" alt="">
-            <div class="oreille">
-                <h1 >Oreille Musicale</h1>
-            </div>
-            <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
-        </div>
-        <nav>
-            <div class="main_pages">
-                <a class="main_pages1" href="./">Creation</a>
-                <a class="main_pages2" href="ecoute">Ecoute</a>
-            </div>
-        </nav>
-    </header>
+   <div class="title">
+            {% for humains in humain %}
+                <h1 class="title">Welcome {{ (humain[2].getHumain_login()) }}</h1>
+            {% endfor %}
+          </div> 
+      <div class="entete">
+          <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
+      </div>
+
+</header>
+         <nav class="nav">
+              <a class="main_pages1" href="./" ><p class="link">Creation</p></a>
+              <a class="main_pages2" href="ecoute"><p class="link">Ecoute</p></a>
+          </div>
+      </nav>
+    </div>  
     <body>
         {# <h1 class="titles">As tu une bonne oreille musicale</h1> #}
     <div class="box_vizualizer2">
         <h1 class="listNotesName">Voici la liste des notes qui existent: </h1>
-        
         <div class="regles">
             <p>1: Cliques sur "Jouer" </p>
             <p>2: Si tu reconnais la note cliques dessus... </p>
-            <p>4: A toi de jouer!!!!</p>
+            <p>3: A toi de jouer!!!!</p>
         </div>       
             <button id="tracks">Jouer</button>
         </div>
@@ -44,7 +46,6 @@
         <audio class="click" src="public/assets\sounds2\SI.mp3">si</audio>
     </div>
     <div class="listNotes">
-     
     </div>
     <div id="container" class="container">
         <p id="question"></p>
@@ -60,6 +61,7 @@
             <div id="faux">0</div>
             <div id="juste">0</div>
         </div>
+    </div>
     <script src="public\assets\js\main2.js"></script>
 </body>
 </html>

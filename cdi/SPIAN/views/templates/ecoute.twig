@@ -4,130 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="./"><img class="img1" src="public\assets\images\retour 11.png" alt=""></a>
     <link rel="stylesheet" href="public\assets\css\style.css">
     <title>Easy Piano🎹 | Ecoute Musicale</title>
     <header>
-      <h1 class="welcome3">⇩ Ecoute ces mélodies connues ⇩</h1>
-        <div class="entete">
-            <img class="img1" src="public\assets\images\retour 11.png" alt="">
-            {# <div class="title">
-                <h1>Easy Piano</h1>
-            </div> #}
-            <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
-        </div>
-        <nav>
-            <div class="main_pages">
-                <a class="main_pages1" href="./">Création</a>
-                <a class="main_pages2" href="oreille">Oreille Musicale</a>
-            </div>
-        </nav>
-    </header>
-        {# <h1 class="welcome">Welcome Albert</h1> #}
+     <header>
+   <div class="title">
+            {% for humains in humain %}
+                <h1 class="title">Welcome {{ (humain[2].getHumain_login()) }}</h1>
+            {% endfor %}
+          </div> 
+      <div class="entete">
+          <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
+      </div>
 
-    {# <form action="#" method="GET" class="row-limit-size-1200" id="form-home">
-    <div class="flex-between search-container">
-        <input type="text" name="search" id="searchResult"placeholder="Quel est le titre de cette chanson?">
-                <input type="submit" value="valider" >
-    </div> #}
-    {# <div class="row-limit-size-1200 select-container-home flex-between">
-               <select name="century" id="input-century" class="select-home" placeholder="">
-            <option  value="Petit Papa Noel" selected disabled hidden>Titre1</option>
-            <button class="option1" ><option  value="moi"selected <button id="option1" class="btn">Petit Papa Noel</option></button>
-            <button class="option2" ><option  value="" selected <button id="option2" class="btn">La panthère rose</option></button>
-            <button class="option3"><option  value=""<button id="option3" class="btn">Frère Jacques</option></button>
-            <button class="option4" ><option  value=""<button id="option4" class="btn">Lettre à Elise</option></button>
-            <button class="option5" ><option  value=""<button id="option5" class="btn">Raiponce</option></button>
-            <button class="option6" ><option  value=""<button id="option6" class="btn">Les Choristes</option></button>
-            <button class="option7"><option  value=""<button id="option7" class="btn">Ce rêve bleu</option></button>
-            <button class="option8" ><option  value=""<button id="option8" class="btn">Joyeux anniversaire</option></button>
-            <button class="option9" ><option  value=""<button id="option9" class="btn">Au clair de la lune</option></button>
-            <button class="option10" ><option  value=""<button id="option10" class="btn">La panthère rose</option></button>
-        </select>
-        <div id="anim_rep1" class="rep">Petit Papa Noël</div>
-        <button id="boutonValidation1" class="btn1">Valider</button>
-        <button id="un" class="play">Play</button>
-    </div> #}
+</header>
+         <nav class="nav">
+              <a class="main_pages1" href="./" ><p class="link">Creation</p></a>
+              <a class="main_pages2" href="oreille" ><p class="link">Oreille</p></a>
+          </div>
+      </nav>
+    </div>  
 
-    {# <form name="rep" methode="get">
-        <input type="text" name="p" id="rep" value="titre....">
-        <table class="form">
-            <tr class="form"></tr>
-            <td class="form"></td>
-            <td class="form"></td> #}
-        <form name="MonForm">
-            <select name="test1" onChange"choixSelector(this.value)" class="form">
-               <option value="1"><button id="un">1</button></option>
-                <option value=" Noel"> 2</option>
-                <option value="a Noel">3</option>
-            </select>
-        </table>
-    </form>
-        {# <div id="ecoute">
-            <p>Quel est le titre de ce morceau 3?</p>
-            
-            <option value="Tite3" selected disabled hidden></option>
-            <input id="input3" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
-            <p id="anim_rep3" class="rep">Frère Jacques</p>
-            <button id="boutonValidation3" class="btn">Valider</button>
-            <button id="trois" class="play">Play</button>
-        </div> #}
+<h1>Des musiques connues</h1>
+
+<form name="myform"  onsubmit="return "action="#">
+<h3>Choisissez un titre:</h3>
+
+<select id="titre">
+  <option id="Petit Papa Noël" value="Petit Papa Noël">Petit Papa Noël</option>
+  <option id="La panthère rose" value="La panthère rose" >La panthère rose</option>
+  <option id="Frère Jacques" value="Frère Jacques">Frère Jacques</option>
+  <option id="Lettre à Elise" value="Lettre à Elise">Lettre à Elise</option>
+  <option id="Raiponce" value="Raiponce">Raiponce</option>
+  <option id="Les Choristes" value="Les Choristes">Les Choristes</option>
+  <option id="Ce rêve bleu" value="Ce rêve bleu">Ce rêve bleu</option>
+  <option id="Joyeux anniversaire" value="Joyeux anniversaire">Joyeux anniversaire</option>
+  <option id="Au clair de la lune" value="Au clair de la lune">Au clair de la lune</option>
+  <option id="La panthère rose" value="La panthère rose">La panthère rose</option>
+</select>
+ <input type="submit" value="submit" id="submit">
+    <script src="public\assets\js\main3.js"></script>        
+       
+   
         
-        {# <div id="ecoute">
-            <p>Quel est le titre de ce morceau 4?</p>
-            <input id="input4" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
-            <p id="anim_rep4" class="rep">Lettre à Elise</p>
-            <button id="boutonValidation4" class="btn">Valider</button>
-            <button id="quatre" class="play">Play</button>
-        </div> 
-        <div id="ecoute">
-            <p>Quel est le titre de ce morceau 5?</p>
-            <input id="input5" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
-            <p id="anim_rep5" class="rep">Raiponce</p>
-            <button id="boutonValidation5" class="btn">Valider</button>
-            <button id="cinq" class="play">Play</button>
-        </div> 
-        <div id="ecoute">
-            <p>Quel est le titre de ce morceau 6?</p>
-            <input id="input6" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
-            <p id="anim_rep6" class="rep">Les Choristes</p>
-            <button id="boutonValidation6" class="btn">Valider</button>
-            <button id="six" class="play">Play</button>
-        </div> 
-        <div id="ecoute">
-          
-            <p>Quel est le titre de ce morceau 7?</p>
-            <input id="input7" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
-            <p id="anim_rep7" class="rep">Ce rêve bleu</p>
-            <button id="boutonValidation7" class="btn">Valider</button>
-            <button id="sept" class="play">Play</button>
-        </div> 
-        <div id="ecoute">
-           
-            <p>Quel est le titre de ce morceau 8?</p>
-            <input id="input8" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
-            <p id="anim_rep8" class="rep">Joyeux anniversaire</p>
-            <button id="boutonValidation8" class="btn">Valider</button>
-            <button id="huit" class="play">Play</button>
-        </div> 
-        <div id="ecoute">
-            
-            <p>Quel est le titre de ce morceau 9?</p>
-            <input id="input9" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
-            <p id="anim_rep9" class="rep">Au clair de la lune </p>
-            <button id="boutonValidation9" class="btn">Valider</button>
-            <button id="neuf" class="play">Play</button>
-        </div> 
-        <div id="ecoute">
-            
-            <p>Quel est le titre de ce morceau 10?</p>
-            <input id="input10" type="text" name="mot" maxlenght="10" id="reponse2" autocomplete="off">
-            <p id="anim_rep10" class="rep">La panthère rose</p>
-            <button id="boutonValidation10" class="btn">Valider</button>
-            <button id="dix" class="play">Play</button>
-        </div> 
-</div>
-    <div id="score2">
-            <div id="faux2">0</div>
-            <div id="juste2">0</div>
-        </div> #}
-<script src="public\assets\js\main3.js"></script>

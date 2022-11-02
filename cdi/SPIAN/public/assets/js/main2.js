@@ -2,10 +2,7 @@
 const audioQuiz = document.querySelectorAll('div audio');
 const btnQuiz = document.getElementsByClassName('.notes');
 let playBtnQuiz = document.getElementById("tracks");
-
-let rValue;
-let audio;
-
+// let audio;
 
 const notes = document.querySelectorAll('.notes');
 const doM = document.querySelector('.do');
@@ -24,10 +21,17 @@ playBtnQuiz.addEventListener('click', (e) =>{
     var rValue = audioQuiz[rand];
     return rValue;    
 }
+playBtnQuiz.onclick = function () {
+    function RandArray(audioQuiz){
+    var rand = Math.random()*audioQuiz.length | 0;
+    var rValue = audioQuiz[rand];
+    return rValue;    
+}
 
 let MaudioQuiz = [];
-let rValue = RandArray(audioQuiz);
+const rValue = RandArray(audioQuiz);
 rValue.play();
+
 for(i= 0 ; i<audioQuiz.length   ; i++){}
 //click notes réponses-Comparaison des deux réponses + points//
 notes.forEach((item) => {
@@ -40,33 +44,92 @@ notes.forEach((item) => {
     })
 })
 
-let faux = document.getElementById("faux");
-let juste = document.getElementById("juste");
-let nbJuste =0;
-let y = nbJuste++;
-let nbFaux = 0;
-let reponse = document.getElementById("reponse");
-let boutonValider = document.getElementById("boutonValider");
-question.content = "Quelle note as tu entendu?";
-let n = 0;
-console.log(rValue.innerText);
-boutonValider.onclick= function () {
-    let score = document.getElementById("score");
-    if (reponse.value.toLowerCase() == rValue.innerText){
-        reponse.value= "✔";  
-        for(let nbJuste = 0; nbJuste <= audioQuiz.length ; nbJuste++){
-          
-        }
-        
-    } else {
-        reponse.value= "❌";
-        nbFaux += 1;
-        faux.textContent = nbFaux;
-    }
-    setTimeout(function () {reponse.value=""},2000);
-
 }
-reponse.addEventListener('keydown', function(e){
+//récupération des notes//
+let doB = document.getElementById("do");
+let reB = document.getElementById("ré");
+let miB = document.getElementById("mi");
+let faB = document.getElementById("fa");
+let solB = document.getElementById("sol");
+let laB = document.getElementById("la");
+let siB = document.getElementById("si");
+let notes = document.querySelectorAll('.click');
 
+let reponse= document.getElementById("reponse");
+
+function RandArray(audioQuiz){
+    var rand = Math.random()*audioQuiz.length | 0;
+    var rValue = audioQuiz[rand];
+    return rValue;   
+}
+ let faux = document.getElementById("faux");
+ let juste = document.getElementById("juste");
+doB.onclick = function  (e) {
+   if(doB.innerText == rValue.innerText){
+        
+        reponse.innerHTML = "✔" + "Bravo!!";
+   } else {
+        reponse.innerHTML= "❌" + "Dommage!!!";
+    
+   }
+}
+reB.onclick = function  (e) {
+    if(reB.innerText == rValue.innerText){
+        reponse.innerHTML = "✔" + "Bravo!!";
+    } else {
+         reponse.innerHTML= "❌" + "Dommage!!!";
+    }
+}
+miB.onclick = function  (e) {
+    if(miB.innerText == rValue.innerText){
+        reponse.innerHTML = "✔" + "Bravo!!";
+    } else {
+         reponse.innerHTML= "❌" + "Dommage!!!";
+    }
+}
+faB.onclick = function  (e) {
+    if(faB.innerText == rValue.innerText){
+        reponse.innerHTML = "✔" + "Bravo!!";
+    } else {
+         reponse.innerHTML= "❌" + "Dommage!!!";
+    }
+}
+solB.onclick = function  (e) {
+    if(solB.innerText == rValue.innerText){
+        reponse.innerHTML = "✔" + "Bravo!!";
+    } else {
+         reponse.innerHTML= "❌" + "Dommage!!!";
+    }
+}
+laB.onclick = function  (e) {
+    if(laB.innerText == rValue.innerText){
+        reponse.innerHTML = "✔" + "Bravo!!";
+    } else {
+         reponse.innerHTML= "❌" + "Dommage!!!";
+    }
+}
+siB.onclick = function  (e) {
+    if(siB.innerText == rValue.innerText){
+        reponse.innerHTML = "✔" + "Bravo!!";
+    } else {
+         reponse.innerHTML= "❌" + "Dommage!!!";
+    }
+}
+const rValue = RandArray(audioQuiz);
+let MaudioQuiz = [];
+console.log(rValue.innerText);
+
+//click notes réponses-Comparaison des deux réponses + points//
+notes.forEach((item) => {
+
+    item.addEventListener('click', function(e) {
+        if(e.target.id == rValue.innerText){
+            alert('bravo'); 
+            if( e.target.id == rValue.innerText){
+            }
+        }
+    })
 })
-})
+
+
+});

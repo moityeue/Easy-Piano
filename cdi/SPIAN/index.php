@@ -28,9 +28,9 @@ $router->map('GET', '/piano', 'ControllerSihumain#allHumain3', 'piano_page');//o
 
 $router->map('GET', '/ecoute', 'ControllerSihumain#allHuma', 'pageEcoute');
 
-//  $router->map('GET', '/theorie', 'ControllerNotes#humain_note', 'pageTheorie');
+  $router->map('GET', '/theorie', 'ControllerNotes#humain_note', 'pageTheorie');
 
-  $router->map('GET', '/theorie', 'ControllerDescription#description', 'pageTheori');
+  //  $router->map('GET', '/theorie', 'ControllerDescription#description', 'pageTheori');
 
   $router->map('GET', '/oreille', 'ControllerScores#allscores', 'scores');
 

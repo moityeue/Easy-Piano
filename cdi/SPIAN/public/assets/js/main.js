@@ -1,5 +1,5 @@
 let keyboard = document.querySelector('.piano__keyboard');
-let pianoNotes = ['DO', 'RE', 'MI', 'FA', 'SOL','LA','SI'];
+let pianoNotes = ['C', 'D', 'E', 'F', 'G','A','B'];
 let keyboardMap = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'A', 'Z', 'E', 'R', 'T', 'Y','U', 'I', 'O', 'P', 'Q', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'W', 'X', 'C', 'V', 'B', 'N'];
 let playBtn = document.querySelector('.piano__play-btn');
  let playBtn2 = document.querySelector('.btn_list3');
@@ -8,13 +8,11 @@ let keys = [];
 // let happyBirthday = `G1,G1,A1,G1,G1,B1,G1,G1,A1,G1,D1,C1,G1,G1,G1,E1,C1,B1,A1,F1,F1,E1,C1,D1,C1`;
 let happyBirthday = `F4,F4,A4,G4,C4,B4`;
           
-
 //activation bouton play//                   
 let playSong =  (notesString, tempo) => {
     let notes = notesString.split(',');
     let currentNote = 0;
     let mousedown = new Event('mousedown');
-    console.log(mousedown);
     let interval = setInterval(() => {
         if(currentNote < notes.length){
             let btn = document.querySelector(`[data-letter-note="${notes[currentNote]}"]`);
@@ -74,7 +72,6 @@ let createKey = (type, note, octave) => {
     })
     return key;
 }
-
 //évenements des touches//
 document.addEventListener('keyup', (e) => {
     let lastLetter = e.code.substring(e.code.length -1);
@@ -112,23 +109,26 @@ document.addEventListener('keydown', (e) => {
 //lecture des notes importées//
 let playSound = (key) => {
     let audio = document.createElement('audio');
-    audio.src = 'public/assets/sounds/' + key.dataset.letterNoteFileName + '.mp3';
+    audio.src = './public/assets/sounds/' + key.dataset.letterNoteFileName + '.mp3';
     audio.play().then(() => audio.remove());  
 }
 
 init();
 
-window.addEventListener('click', (e) => {
-    console.log(e);
-    const circle = document.createElement('div')
-    circle.className = 'welcome'
-    circle.style.top = `${e.pageY - 50}px`
-    circle.style.left = `${e.pageX - 50}px`
-    document.body.appendChild(circle)
-    setTimeout(() => {
-        circle.remove();
-    },1500)
-})
+
+
+// window.addEventListener('click', (e) => {
+//     const circle = document.createElement('div')
+//     circle.className = 'welcome'
+//     circle.style.top = `${e.pageY - 50}px`
+//     circle.style.left = `${e.pageX - 50}px`
+//     document.body.appendChild(circle)
+//     setTimeout(() => {
+//         circle.remove();
+//     },1500)
+// })
+
+
 
 
 

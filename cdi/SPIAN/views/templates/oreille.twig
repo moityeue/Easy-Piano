@@ -9,8 +9,8 @@
     <header>
         <div class="entete">
             <img class="img1" src="public\assets\images\retour 11.png" alt="">
-            <div class="title">
-                <h1>Easy Piano</h1>
+            <div class="oreille">
+                <h1 >Oreille Musicale</h1>
             </div>
             <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
         </div>
@@ -25,28 +25,17 @@
         {# <h1 class="titles">As tu une bonne oreille musicale</h1> #}
     <div class="box_vizualizer2">
         <h1 class="listNotesName">Voici la liste des notes qui existent: </h1>
-        <p>DO , RE , MI ,FA , SOL, LA , SI</p>
-           
         
+        <div class="regles">
             <p>1: Cliques sur "Jouer" </p>
-            <p>2: Si tu reconnais la note écris la... </p>
-            <p>3: Valides ta réponse!!</p>
+            <p>2: Si tu reconnais la note cliques dessus... </p>
             <p>4: A toi de jouer!!!!</p>
+        </div>       
             <button id="tracks">Jouer</button>
         </div>
-        
-        <div>
-            <audio src="public\assets\sounds2\DO.mp3">do</audio>
-            <audio src="public\assets\sounds2\RE.mp3">ré</audio>
-            <audio src="public\assets\sounds2\MI.mp3">mi</audio>
-            <audio src="public\assets\sounds2\FA.mp3">fa</audio>
-            <audio src="public\assets\sounds2\SOL.mp3">sol</audio>
-            <audio src="public\assets\sounds2\LA.mp3">la</audio>
-            <audio src="public\assets\sounds2\SI.mp3">si</audio>
-        </div>
-    </div>
+            <p  id="reponse"></p>
     <div class="onclick">
-        <audio class="click" src="public/assets\sounds2\DO.mp3"></audio>
+        <audio class="click" src="public/assets\sounds2\DO.mp3">do</audio>
         <audio class="click" src="public/assets\sounds2\RE.mp3">ré</audio>
         <audio class="click" src="public/assets\sounds2\MI.mp3">mi</audio>
         <audio class="click" src="public/assets\sounds2\FA.mp3">fa</audio>
@@ -57,17 +46,20 @@
     <div class="listNotes">
      
     </div>
-        <div id="container">
+    <div id="container" class="container">
         <p id="question"></p>
-        <input type="text" name="mot" maxlenght="10" id="reponse" autocomplete="off">
-        <p>Utilises ce bouton pour valider ta réponse</p>
-        <button id="boutonValider">Valider</button>
+        <button  id="do"  id="reponse">do</button>
+        <button  id="ré"  id="reponse">ré</button>
+        <button  id="mi"  id="reponse">mi</button>
+        <button  id="fa"  id="reponse">fa</button>
+        <button  id="sol" id="reponse">sol</button>
+        <button  id="la"  id="reponse">la</button>
+        <button  id="si"  id="reponse">si</button>
+    </div>
         <div id="score">
             <div id="faux">0</div>
             <div id="juste">0</div>
         </div>
-    </div>
-    
     <script src="public\assets\js\main2.js"></script>
 </body>
 </html>

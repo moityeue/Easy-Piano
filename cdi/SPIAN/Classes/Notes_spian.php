@@ -9,6 +9,7 @@ class Notes_spian extends Classes {
     public function setId_notes($id_notes) {
         return $this->_id_notes = $id_notes;
     }
+    
     public function getNote_name() {
         return $this->_note_name;
     }

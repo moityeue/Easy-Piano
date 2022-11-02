@@ -5,7 +5,7 @@ class ControllerScores extends ControllerTwig {
         $loader = new Twig\Loader\FilesystemLoader('./views');
         $twig = ControllerTwig::twigControl();
         $manager = new ModelScores();
-        $score = $manager->humain_scores($manager);
+        $score = $manager->humain_scores();
          echo $twig->render('templates\oreille.twig'); 
     }
     // public static function allScore() {

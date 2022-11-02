@@ -212,18 +212,6 @@ header {
     animation-name: glissement;
     animation-iteration-count: 20s;
 }
-/* .welcome3{
- 
-     left: 32%; 
-    font-weight: bold;
-    font-size: 3rem;
-    color: #202c2d;
-    color: #444444;
-    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
-    animation-duration: 3s;
-    animation-name: glissement;
-    animation-iteration-count: 20s;
-} */
 .welcome3 {
     position: absolute;
     top: 20%;
@@ -245,7 +233,31 @@ header {
       width: 100%;
     }
   }
-
+.select-container-home{
+    display: flex;
+    width: 300px;
+    margin-top: 10%;
+    justify-content: space-between;
+}
+.select-home {
+    height:10%;
+    width: 50%;
+   margin-left: 2%;
+   margin-top: 10%;
+   margin-bottom: 10%;
+}
+.play {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    height: 10%;
+    width: 17%;
+    margin-right: 5%;
+    color: rgb(17, 88, 154); font-size: 10px; line-height: 10px; padding: 4px; border-radius: 8px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
+    .myButton:hover {
+    background: #1C6EA4; }
+    .myButton:active {
+    background: #144E75;
+}
 .main_pages {
     justify-content: space-between;
     position: absolute;
@@ -290,7 +302,6 @@ header {
     display: flex;
     justify-content: center;
   }
-  
   .cta {
     position:absolute;
     top: 60%;
@@ -483,17 +494,17 @@ header {
     text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
 }
 
-#container {
+/* #container {
     position: absolute;
-    top: 80%;
-    background: lightblue;
+    top: 70%;
+    width: 80%;
+    height: 30%;
+    background: rgb(3, 16, 20);
     font-family: arial;
     display: flex;
-    grid-row-gap: 5%;
-    grid-template-rows: minmax(50px,20%) minmax(50px,10%) auto;
-    justify-content: center;
-    justify-items: center;
-}
+    justify-content: space-around;
+   
+} */
 
 #question2 {
     grid-row: 1/2;
@@ -544,15 +555,136 @@ margin-left: 15%;
     margin-bottom: 20%;
 }
 
-#container {
+.box_vizualizer2 > .regles > p {
+    margin-top: 1.5%;
+    width: 100%;
+    margin-bottom: 1%;
+    text-align: center;
+    color: white;
+}
+#reponse {
     position: absolute;
+    top: 70%;
+    height: 10px;
+    width: 50px;
+    background-color:#ffff;
+    justify-content: center;
+    align-items: center;
+}
+#green{
+    background-color:green;
+}
+#red {
+    background-color: red;
+}
+
+.resultat > p {
+    width: 100%;
+    text-align: center;
+}
+#container > button {
+    width: 7%;
+    margin-left: 15%;
+    color: rgb(17, 88, 154); font-size: 10px; line-height: 10px; padding: 4px; border-radius: 8px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
+    .myButton:hover {
+    background: #1C6EA4; }
+    .myButton:active {
+    background: #144E75;
+}
+#container {
+    margin-top: 45%;
+    position: relative;
     background: #11589A;
     font-family: arial;
-    display: grid;
-    grid-row-gap: 5%;
-    width: 40%;
-    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    /* grid-row-gap: 5%; */
+    width: 50%;
+    height: 25%;
     bottom: 10%;
+}
+.oreille > h1 {
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    top: 15%;
+    left: 2%;
+    position: absolute;
+    z-index: 666;
+    border-radius: 10px;
+    transform: scale(0);
+    transform-origin: center;
+    animation: clickAnim 20s ease-in-out;/*l'animation dure 1sec de l'intérieur vers l'extérieur*/
+    color: #FFFFFF;
+    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+    }
+    .link_piano  {
+        position: absolute;
+        top: 80%;
+        left: 38%;
+    }
+ 
+    @keyframes clickAnim {
+    0% {
+    transform: scale(0);
+    }
+    10% {
+    transform: scale(1);/*permet d'étirer*/
+    opacity: 1;
+    }
+    0% {
+    transform: scale(0);
+    opacity: 0;/*transparence*/
+    }
+}
+#do {
+    position: absolute;
+    top: 35%;
+    width: 10%;
+    height: 30%;
+    left: 1%;
+}
+#ré {
+    position: absolute;
+    top: 35%;
+    width: 10%;
+    height: 30%;
+    left: 10%;
+}
+#mi {
+    position: absolute;
+    top: 35%;
+    width: 10%;
+    height: 30%;
+    left: 20%;
+}
+#fa {
+    position: absolute;
+    top: 35%;
+    width: 10%;
+    height: 30%;
+    left: 30%;
+}
+#sol {
+    position: absolute;
+    top: 35%;
+    width: 10%;
+    height: 30%;
+    left: 40%;
+}
+#la {
+    position: absolute;
+    top: 35%;
+    width: 10%;
+    height: 30%;
+    left: 50%;
+}
+#si {
+    position: absolute;
+    top: 35%;
+    width: 10%;
+    height: 30%;
+    left: 60%;
 }
 .rep {
     display: none;
@@ -591,12 +723,10 @@ margin-left: 15%;
 }
 
 #reponse {
-    height: 50%;
-    width: 30%;
+    height: 3%;
+    width: 15%;
     text-align: center;
-    grid-row: 2/3;
-    border-radius: 2vh;
-    font-size: 2vh;
+    margin-bottom: 5%;
 }
 
 #reponse2 {
@@ -619,6 +749,7 @@ margin-left: 15%;
     font-size: small;
     justify-content: culumn;
 }
+
 #boutonValidation {
     border-radius: 10px;
     background-color :#7CB9E8;
@@ -626,6 +757,7 @@ margin-left: 15%;
     font-size: small;
     justify-content: culumn;
 }
+
 .btn {
     width: 7%;
     color: rgb(17, 88, 154); font-size: 10px; line-height: 10px; padding: 4px; border-radius: 8px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
@@ -634,14 +766,15 @@ margin-left: 15%;
     .myButton:active {
     background: #144E75;
 }
-.play {
-    width: 7%;
+.btn1{
+    width: 15%;
     color: rgb(17, 88, 154); font-size: 10px; line-height: 10px; padding: 4px; border-radius: 8px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
     .myButton:hover {
     background: #1C6EA4; }
     .myButton:active {
     background: #144E75;
 }
+
 #container2 > p {
     position: absolute;
     left:35%;

@@ -11,7 +11,7 @@
     const zikNeuf = new Audio('public/assets/sounds3/Au clair de la lune.mp3');
     const zikDix = new Audio('public/assets/sounds3/La panthère rose.mp3');
 
-    const un = document.getElementById('un');
+    const un = document.getElementsById('un');
     const deux = document.getElementById('deux');
     const trois = document.getElementById('trois');
     const quatre = document.getElementById('quatre');
@@ -22,36 +22,35 @@
     const neuf = document.getElementById('neuf');
     const dix = document.getElementById('dix');
     
-    un.addEventListener('click', ()=>{
-        zikUn.play();
-    })
-    deux.addEventListener('click', ()=>{
-        zikDeux.play();
-    })
-    trois.addEventListener('click', ()=>{
-        zikTrois.play();
-    })
-    quatre.addEventListener('click', ()=>{
-        zikQuatre.play();
-    })
-    cinq.addEventListener('click', ()=>{
-        zikCinq.play();
-    })
-    six.addEventListener('click', ()=>{
-        zikSix.play();
-    })
-    sept.addEventListener('click', ()=>{
-        zikSept.play();
-    })
-    huit.addEventListener('click', ()=>{
-        zikHuit.play();
-    })
-    neuf.addEventListener('click', ()=>{
-        zikNeuf.play();
-    })
-    dix.addEventListener('click', ()=>{
-        zikDix.play();
-    })
+   
+console.log(btnUn);
+    // deux.addEventListener('click', ()=>{
+    //     zikDeux.play();
+    // })
+    // trois.addEventListener('click', ()=>{
+    //     zikTrois.play();
+    // })
+    // quatre.addEventListener('click', ()=>{
+    //     zikQuatre.play();
+    // })
+    // cinq.addEventListener('click', ()=>{
+    //     zikCinq.play();
+    // })
+    // six.addEventListener('click', ()=>{
+    //     zikSix.play();
+    // })
+    // sept.addEventListener('click', ()=>{
+    //     zikSept.play();
+    // })
+    // huit.addEventListener('click', ()=>{
+    //     zikHuit.play();
+    // })
+    // neuf.addEventListener('click', ()=>{
+    //     zikNeuf.play();
+    // })
+    // dix.addEventListener('click', ()=>{
+    //     zikDix.play();
+    // })
 
 let reponse1 = document.getElementById("anim_rep1");
 let reponse2 = document.getElementById("anim_rep2");
@@ -75,6 +74,22 @@ let repUser8 = document.getElementById("input8");
 let repUser9 = document.getElementById("input9");
 let repUser10 = document.getElementById("input10");
 
+let option1= document.getElementById("option1");
+
+let option2= document.getElementById("option2");
+
+let option3 = document.getElementById("option3");
+let option4 = document.getElementById("option4");
+let option5 = document.getElementById("option5");
+let option6 = document.getElementById("option6");
+let option7 = document.getElementById("option7");
+let option8 = document.getElementById("option8");
+let option9 = document.getElementById("option9");
+let option10 = document.getElementById("option10");
+
+
+
+const opt = document.querySelectorAll('.opt');
 
 let buto1 = document.getElementById("boutonValidation1");
 
@@ -88,120 +103,105 @@ let buto8 = document.getElementById("boutonValidation8");
 let buto9 = document.getElementById("boutonValidation9");
 let buto10 = document.getElementById("boutonValidation10");
 
+let search = document.getElementById("searchResult");
 
-let point = 0;
-let faux =0;
 
-let nbBonneRep = document.getElementById("juste2");
 
-let nbMauvaiseRep = document.getElementById("faux2");
 
-for (let i = 0; i < 10; i++) {
-buto1.onclick = function ()  {
-    if(repUser1.value == reponse1.innerText){
-        repUser1.value = "✔";
-        point+=1;
-        point.textContent = nbBonneRep;
-       
-    } else {
-        repUser1.value = "❌" + reponse1.innerText;
-        faux+=1;
-        faux.textContent = nbMauvaiseRep;
-    }
-    // setTimeout(function () {repUser1.value="";2000})
-    console.log(point);  
-    
-}
-buto2.onclick = function ()  {
-    if(repUser2.value == reponse2.innerText){
-        repUser2.value = "✔" ;
-        point+=1;
-    } else {
-        repUser2.value = "❌" + reponse2.innerText;
-        faux+=1;
-    }
-    console.log(point);  
-}
 
-buto3.onclick = function ()  {
-    if(repUser3.value == reponse3.innerText){
-        repUser3.value = "✔" ;
-        point+=1;
-    } else {
-        repUser3.value = "❌" + reponse3.innerText;
-        faux+=1;
-    }
-    console.log(point);  
-}
-buto4.onclick = function ()  {
-    if(repUser4.value == reponse4.innerText){
-        repUser4.value = "✔";
-        point+=1;
-    } else {
-        repUser4.value = "❌" + reponse4.innerText;
-        faux+=1;
-    }
-    console.log(point);  
-}
-buto5.onclick = function ()  {
-        if(repUser5.value == reponse5.innerText){
-        repUser5.value = "✔";
-        point+=1;
-    } else {
-        repUser5.value = "❌" + reponse5.innerText;
-        faux+=1;
-    }
-    console.log(point);  
-}
-buto6.onclick = function ()  {
-    if(repUser6.value == reponse6.innerText){
-        repUser6.value = "✔";
-        point+=1;
-    } else {
-        repUser6.value = "❌" + reponse6.innerText;
-        faux+=1;
-    }
-    console.log(point);  
-}
-buto7.onclick = function ()  {
-    if(repUser7.value == reponse7.innerText){
-        repUser7.value = "✔";
-        point+=1;
-    } else {
-        repUser7.value = "❌" + reponse7.innerText;
-        faux+=1;
-    }
-    console.log(point);  
-}
-buto8.onclick = function ()  {
-    if(repUser8.value == reponse8.innerText){
-        repUser8.value = "✔";
-        point+=1;
-    } else {
-        repUser8.value = "❌" + reponse8.innerText;
-        faux+=1;
-    }
-    console.log(point);  
-}
-buto9.onclick = function ()  {
-    if(repUser9.value == reponse9.innerText){
-        repUser9.value = "✔";
-        point+=1;
-    } else {
-        repUser9.value = "❌" + reponse9.innerText;
-        faux+=1;
-    }
-    console.log(point);  
-}
-buto10.onclick = function ()  {
-    if(repUser10.value == reponse10.innerText){
-        repUser10.value = "✔";
-        point+=1;
-    } else {
-        repUser10.value = "❌" + reponse10.innerText;
-        faux+=1;
-    }
+
+
+
+// buto2.onclick = function ()  {
+//     if(repUser2.value == reponse2.innerText){
+//         repUser2.value = "✔" ;
+//         point+=1;
+//     } else {
+//         repUser2.value = "❌" + reponse2.innerText;
+//         faux+=1;
+//     }
+//     console.log(point);  
+// }
+
+// buto3.onclick = function ()  {
+//     if(repUser3.value == reponse3.innerText){
+//         repUser3.value = "✔" ;
+//         point+=1;
+//     } else {
+//         repUser3.value = "❌" + reponse3.innerText;
+//         faux+=1;
+//     }
+//     console.log(point);  
+// }
+// buto4.onclick = function ()  {
+//     if(repUser4.value == reponse4.innerText){
+//         repUser4.value = "✔";
+//         point+=1;
+//     } else {
+//         repUser4.value = "❌" + reponse4.innerText;
+//         faux+=1;
+//     }
+//     console.log(point);  
+// }
+// buto5.onclick = function ()  {
+//         if(repUser5.value == reponse5.innerText){
+//         repUser5.value = "✔";
+//         point+=1;
+//     } else {
+//         repUser5.value = "❌" + reponse5.innerText;
+//         faux+=1;
+//     }
+//     console.log(point);  
+// }
+// buto6.onclick = function ()  {
+//     if(repUser6.value == reponse6.innerText){
+//         repUser6.value = "✔";
+//         point+=1;
+//     } else {
+//         repUser6.value = "❌" + reponse6.innerText;
+//         faux+=1;
+//     }
+//     console.log(point);  
+// }
+// buto7.onclick = function ()  {
+//     if(repUser7.value == reponse7.innerText){
+//         repUser7.value = "✔";
+//         point+=1;
+//     } else {
+//         repUser7.value = "❌" + reponse7.innerText;
+//         faux+=1;
+//     }
+//     console.log(point);  
+// }
+// buto8.onclick = function ()  {
+//     if(repUser8.value == reponse8.innerText){
+//         repUser8.value = "✔";
+//         point+=1;
+//     } else {
+//         repUser8.value = "❌" + reponse8.innerText;
+//         faux+=1;
+//     }
+//     console.log(point);  
+// }
+// buto9.onclick = function ()  {
+//     if(repUser9.value == reponse9.innerText){
+//         repUser9.value = "✔";
+//         point+=1;
+//     } else {
+//         repUser9.value = "❌" + reponse9.innerText;
+//         faux+=1;
+//     }
+//     console.log(point);  
+// }
+// buto10.onclick = function ()  {
+//     if(repUser10.value == reponse10.innerText){
+//         repUser10.value = "✔";
+//         point+=1;
+//     } else {
+//         repUser10.value = "❌" + reponse10.innerText;
+//         faux+=1;
+//     }
      
-}
-}
-console.log(nbBonneRep.innerText);
+// }
+// }
+// console.log(nbBonneRep.innerText);

@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <a href="./"><img class="img1" src="public\assets\images\retour 11.png" alt=""></a>
-    <link rel="stylesheet" href="public\assets\css\style.css">
-    <title>Easy Piano🎹 | Ecoute Musicale</title>
-    <header>
-     <header>
+     <a href="ecoute"><img class="img1" src="public\assets\images\retour 11.png" alt=""></a>
+    <link rel="stylesheet" href="public/assets\css\style.css">
+     <title>Easy Piano🎹 | Ecoute-Quiz</title>
+</head>
+<header>
    <div class="title">
-            {% for humains in humain %}
-                <h1 class="title">Welcome {{ (humain[2].getHumain_login()) }}</h1>
-            {% endfor %}
           </div> 
       <div class="entete">
           <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
@@ -20,31 +17,32 @@
 
 </header>
          <nav class="nav">
-              <a class="main_pages1" href="./" ><p class="link">Creation</p></a>
-              <a class="main_pages2" href="oreille" ><p class="link">Oreille</p></a>
+              <a class="main_pages1" href="./"><p class="link">Creation</p></a>
+              <a class="main_pages2" href="oreille"><p class="link">Oreille</p></a>
           </div>
       </nav>
     </div>  
+    <div class="main_content">
+        <div id="header_screen" class="header_screen">
+            <h1 class="title"> Quiz Musicale</h1>
+            <span class="sous_title"> Il y a <span class="nbrQuestion"> ?? </span> Questions </span>
+            <div>
+                <button id="btn_start" class="start"> Commencer </button>
+                <h1>ou bien...</h1>
+                <a href="theorie">  <button id="musique" class="start" > En musique </button></a>
+            </div>
+        </div>
 
-<h1>Des musiques connues</h1>
+        <div id="questions_screen" class="questions_screen">
+            
+        </div>
 
-<form name="myform"  onsubmit="return "action="#">
-<h3>Choisissez un titre:</h3>
-
-<select id="titre">
-  <option id="Petit Papa Noël" value="Petit Papa Noël">Petit Papa Noël</option>
-  <option id="La panthère rose" value="La panthère rose" >La panthère rose</option>
-  <option id="Frère Jacques" value="Frère Jacques">Frère Jacques</option>
-  <option id="Lettre à Elise" value="Lettre à Elise">Lettre à Elise</option>
-  <option id="Raiponce" value="Raiponce">Raiponce</option>
-  <option id="Les Choristes" value="Les Choristes">Les Choristes</option>
-  <option id="Ce rêve bleu" value="Ce rêve bleu">Ce rêve bleu</option>
-  <option id="Joyeux anniversaire" value="Joyeux anniversaire">Joyeux anniversaire</option>
-  <option id="Au clair de la lune" value="Au clair de la lune">Au clair de la lune</option>
-  <option id="La panthère rose" value="La panthère rose">La panthère rose</option>
-</select>
- <input type="submit" value="submit" id="submit">
-    <script src="public\assets\js\main3.js"></script>        
-       
-   
-        
+        <div id="result_screen" class="result_screen">
+            <h2 class="ecoute"> Résultat </h2>
+            <span class="nbrCorrects"> Vous avez <span id="nbrCorrects"> ?? </span> réponses correctes sur <span class="nbrQuestion"> ?? </span> </span>
+        </div>
+    </div>
+    <script src="public\assets\js\main3.js"></script>
+</body>
+</html>
+ 

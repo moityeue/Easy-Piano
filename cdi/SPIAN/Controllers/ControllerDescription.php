@@ -4,7 +4,7 @@ class ControllerDescription extends ControllerTwig {
         $loader = new Twig\Loader\FilesystemLoader('./views');
         $twig = ControllerTwig::twigControl();
         $manager = new ModelDescription();
-        $descriptions = $manager->humain_descriptions();
-         echo $twig->render('templates\theorie.twig' , ['description' => $descriptions, 'base' => self::$_base]); 
+        $desc = $manager->humain_descriptions();
+         echo $twig->render('templates\theorie.twig' , ['description' => $desc, 'base' => self::$_base]); 
     }
 }

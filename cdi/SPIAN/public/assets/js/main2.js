@@ -62,74 +62,74 @@ function RandArray(audioQuiz){
     var rValue = audioQuiz[rand];
     return rValue;   
 }
- let faux = document.getElementById("faux");
- let juste = document.getElementById("juste");
-doB.onclick = function  (e) {
-   if(doB.innerText == rValue.innerText){
+
+let faux = document.getElementById("faux");
+let juste =   document.getElementById("juste");
+for (let i=0; i<=10; i++) {
+    doB.onclick = function  (e) {
+    if(doB.innerText == rValue.innerText){
+            reponse.innerHTML = "✔" + "Bravo!!";
+            juste = juste +1;
+          
+    } else {
+            reponse.innerHTML= "❌" + "Dommage!!!";
+            faux = faux +1;
+            
+    } 
+    }
+    reB.onclick = function  (e) {
+        if(reB.innerText == rValue.innerText){
+            reponse.innerHTML = "✔" + "Bravo!!";
+            juste = juste +=1;
+        } else {
+            reponse.innerHTML= "❌" + "Dommage!!!";
+            faux = faux +1;
+        }
+    }
+    miB.onclick = function  (e) {
+        if(miB.innerText == rValue.innerText){
+            reponse.innerHTML = "✔" + "Bravo!!";
+            juste = juste +1;
+        } else {
+            reponse.innerHTML= "❌" + "Dommage!!!";
+        }
+    }
+    faB.onclick = function  (e) {
+        if(faB.innerText == rValue.innerText){
+            reponse.innerHTML = "✔" + "Bravo!!";
+        } else {
+            reponse.innerHTML= "❌" + "Dommage!!!";
+        }
+    }
+    solB.onclick = function  (e) {
+        if(solB.innerText == rValue.innerText){
+            reponse.innerHTML = "✔" + "Bravo!!";
+        } else {
+            reponse.innerHTML= "❌" + "Dommage!!!";
+        }
+    }
+    laB.onclick = function  (e) {
+        if(laB.innerText == rValue.innerText){
+            reponse.innerHTML = "✔" + "Bravo!!";
+        } else {
+            reponse.innerHTML= "❌" + "Dommage!!!";
+        }
+    }
+    siB.onclick = function  (e) {
+        if(siB.innerText == rValue.innerText){
+            reponse.innerHTML = "✔" + "Bravo!!";
+        } else {
+            reponse.innerHTML= "❌" + "Dommage!!!";
+        }
+    }
+    setTimeout(function() {
         
-        reponse.innerHTML = "✔" + "Bravo!!";
-   } else {
-        reponse.innerHTML= "❌" + "Dommage!!!";
-    
-   }
-}
-reB.onclick = function  (e) {
-    if(reB.innerText == rValue.innerText){
-        reponse.innerHTML = "✔" + "Bravo!!";
-    } else {
-         reponse.innerHTML= "❌" + "Dommage!!!";
-    }
-}
-miB.onclick = function  (e) {
-    if(miB.innerText == rValue.innerText){
-        reponse.innerHTML = "✔" + "Bravo!!";
-    } else {
-         reponse.innerHTML= "❌" + "Dommage!!!";
-    }
-}
-faB.onclick = function  (e) {
-    if(faB.innerText == rValue.innerText){
-        reponse.innerHTML = "✔" + "Bravo!!";
-    } else {
-         reponse.innerHTML= "❌" + "Dommage!!!";
-    }
-}
-solB.onclick = function  (e) {
-    if(solB.innerText == rValue.innerText){
-        reponse.innerHTML = "✔" + "Bravo!!";
-    } else {
-         reponse.innerHTML= "❌" + "Dommage!!!";
-    }
-}
-laB.onclick = function  (e) {
-    if(laB.innerText == rValue.innerText){
-        reponse.innerHTML = "✔" + "Bravo!!";
-    } else {
-         reponse.innerHTML= "❌" + "Dommage!!!";
-    }
-}
-siB.onclick = function  (e) {
-    if(siB.innerText == rValue.innerText){
-        reponse.innerHTML = "✔" + "Bravo!!";
-    } else {
-         reponse.innerHTML= "❌" + "Dommage!!!";
-    }
+    }, 1500);
+
 }
 const rValue = RandArray(audioQuiz);
 let MaudioQuiz = [];
 console.log(rValue.innerText);
-
-//click notes réponses-Comparaison des deux réponses + points//
-notes.forEach((item) => {
-
-    item.addEventListener('click', function(e) {
-        if(e.target.id == rValue.innerText){
-            alert('bravo'); 
-            if( e.target.id == rValue.innerText){
-            }
-        }
-    })
-})
-
-
+  
 });
+

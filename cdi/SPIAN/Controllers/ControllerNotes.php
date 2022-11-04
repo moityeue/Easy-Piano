@@ -5,6 +5,6 @@ class ControllerNotes extends   ControllerTwig{
         $twig = ControllerTwig::twigControl();
         $manager = new ModelNotes();
         $note = $manager->humain_notes();
-         echo $twig->render('templates\theorie.twig', ['note' => $note, 'base' => self::$_base ] );
+         echo $twig->render('templates\theorie.twig', ['note' => $note[0], 'base' => self::$_base ] );
     }
 }

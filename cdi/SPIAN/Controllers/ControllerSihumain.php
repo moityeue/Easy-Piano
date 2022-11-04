@@ -22,6 +22,7 @@ class ControllerSihumain extends ControllerTwig {
         $loader = new Twig\Loader\FilesystemLoader('./views');
         $twig = ControllerTwig::twigControl();
         $manager = new ModelSihumain();
+        $hum = $_POST;
         $hum = $manager->humain_login();
         echo $twig->render('templates\homepage.twig', ['humain' => $hum[0], 'scores' => $hum[1],'base' => self::$_base]);
     }

@@ -26,11 +26,12 @@ $router->map('GET', '/', 'ControllerSihumain#allHumain', 'home_page');//ok//
 $router->map('GET', '/piano', 'ControllerSihumain#allHumain3', 'piano_page');//ok//
 
 
-$router->map('GET', '/ecoute', 'ControllerSihumain#allHuma', 'pageEcoute');
+//  $router->map('GET', '/ecoute', 'ControllerSihumain#allHuma', 'pageEcout');
 
-  $router->map('GET', '/theorie', 'ControllerNotes#humain_note', 'pageTheorie');
+$router->map('GET', '/ecoute', 'ControllerMusique#musique', 'pageEcoute');
 
-//  $router->map('GET', '/theorie', 'ControllerDescription#description', 'pageTheori');
+  // $router->map('GET', '/theorie', 'ControllerNotes#humain_note', 'pageTheorie');
+  $router->map('GET', '/theorie', 'ControllerNotes#humain_note', 'pageTheori');
 
   $router->map('GET', '/oreille', 'ControllerScores#allscores', 'scores');
 

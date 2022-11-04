@@ -8,11 +8,4 @@ class ControllerScores extends ControllerTwig {
         $score = $manager->humain_scores();
          echo $twig->render('templates\oreille.twig'); 
     }
-    // public static function allScore() {
-    //     $loader = new Twig\Loader\FilesystemLoader('./views');
-    //     $twig = ControllerTwig::twigControl();
-    //     $manager = new ModelScores();
-    //     $scores = $manager->humain_score();
-    //     echo $twig->render('templates\allScores.twig', ); 
-    // }
 }

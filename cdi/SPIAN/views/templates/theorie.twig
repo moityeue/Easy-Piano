@@ -1,33 +1,28 @@
-{# 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public\assets\css\style.css">
-    <title>Easy Piano🎹 | Theorie</title>
-<header>
-    <div class="entete">
-    <a href="./"> <img class="img1" src="public\assets\images\retour 11.png" alt=""></a>
-    <div class="title">
-        <h1>Un peu de théorie</h1>
-    </div>
-    <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
-    </div>
-</header> 
-<div class="TheoNotes">
-    <button class="my" id="do ">do</button>
-    <button class="my" id="ré">ré</button>
-    <button class="my" id="mi">mi</button>
-    <button class="my" id="fa">fa</button>
-    <button class="my" id="sol">sol</button>
-    <button class="my" id="la">la</button>
-    <button class="my" id="si">si</button>
+     <link rel="stylesheet" href="public/assets\css\style.css">
+    <title>Document</title>
+</head>
+<body>
+  <a href="ecoute"><img class="img1" src="public\assets\images\retour 11.png" alt=""></a>
+  <h1 class="titleZik">Cliquez sur le titre que vous désirez écouter!!!</h1>
+<div class="enZik">
+    <button id="un">Petit papa noel</button>
+    <button id="deux">La panthere rose</button>
+    <button id="trois">Frere Jacques</button>
+    <button id="quatre">Lettre a Elise</button>
+    <button id="cinq">Raiponce</button>
+    <button id="six">Les choristes</button>
+    <button id="sept">Ce reve bleu</button>
+    <button id="huit">Joyeux anniversaire</button>
+    <button id="neuf">Au clair de la lune</button>
+    <button id="dix">Bella ciao</button>
 </div>
-   {% for notes in note %}
-        <h1 class="welcome">Welcome {{ (note[0].getnote_name()) }}</h1>
-        {% endfor %}
-    <script src="js/main.js"></script>
+    <script src="public\assets\js\main3.js"></script>
+    <script src="public\assets\js\lecteur.js"></script> 
 </body>
-</html>  #}
+</html>

@@ -1,214 +1,168 @@
+// Récupérer mes 3 blocks div HTML (le header, la div questions et la div result)
+let header_screen = document.getElementById("header_screen");
+let questions_screen = document.getElementById("questions_screen");
+let result_screen = document.getElementById("result_screen");
 
-    //Play Audio//
-    const zikUn = new Audio('public/assets/sounds3/Petit Papa Noël.mp3');
-    const zikDeux = new Audio('public/assets/sounds3/La panthère rose.mp3');
-    const zikTrois = new Audio('public/assets/sounds3/Frère Jacques.mp3');
-    const zikQuatre = new Audio('public/assets/sounds3/Lettre à Elise.mp3');
-    const zikCinq = new Audio('public/assets/sounds3/Raiponce.mp3');
-    const zikSix = new Audio('public/assets/sounds3/Les Choristes.mp3');
-    const zikSept = new Audio('public/assets/sounds3/Ce rêve bleu.mp3');
-    const zikHuit = new Audio('public/assets/sounds3/Joyeux anniversaire.mp3');
-    const zikNeuf = new Audio('public/assets/sounds3/Au clair de la lune.mp3');
-    const zikDix = new Audio('public/assets/sounds3/La panthère rose.mp3');
+// Etablir la fonction Quiz permettant d'ajouter des questions et de voir combien de bonnes réponse le user a
+function Quiz(){
+    this.questions = [];
+    this.nbrCorrects = 0;
+    this.indexCurrentQuestion = 0;
 
-    // const un = document.getElementsById('un');
-    // const deux = document.getElementById('deux');
-    // const trois = document.getElementById('trois');
-    // const quatre = document.getElementById('quatre');
-    // const cinq = document.getElementById('cinq');
-    // const six = document.getElementById('six');
-    // const sept = document.getElementById('sept');
-    // const huit = document.getElementById('huit');
-    // const neuf = document.getElementById('neuf');
-    // const dix = document.getElementById('dix');
+    // Ajouts de questions
+    this.addQuestion = function(question) {
+        this.questions.push(question);
+    }
+
+    // Fonction servant à passer à la question suivante s'il y en a une, sinon ça affiche le résultat final 
+    this.displayCurrentQuestion = function() {
+        if(this.indexCurrentQuestion < this.questions.length) {
+            this.questions[this.indexCurrentQuestion].getElement(
+                this.indexCurrentQuestion + 1, this.questions.length
+            );
+        }
+        else {
+            questions_screen.style.display = "none";
+
+            let NbrCorrectUser = document.querySelector("#nbrCorrects");
+            NbrCorrectUser.textContent = quiz.nbrCorrects;
+            result_screen.style.display = "block";
+        }
+    }
+}
+
+
+// Fonction Question permettant de créer les questions avec le titre, les réponses et la réponse correcte
+function Question(title, answers, answerCorrect) {
+    this.title = title,
+    this.answers = answers,
+    this.answerCorrect = answerCorrect,
+
+    // Mise en place et structuration du HTML et CSS pour mes questions
+    this.getElement = function(indexQuestion, nbrOfQuestions) {
+        let questionTitle = document.createElement("h3");
+        questionTitle.classList.add("title_questions");
+        questionTitle.textContent = this.title;
+
+        // Le append sert à afficher le html (il existe le after et le prepend si on veut afficher au-dessus ou en-dessous)
+        questions_screen.append(questionTitle);
+
+        let questionAnswer = document.createElement("ul");
+        questionAnswer.classList.add("list_questions");
+
+        // Boucle en ForEach pour placer à chaque fois un <li> pour chaque réponse
+        this.answers.forEach((answer, index) => {
+            let answerElement =  document.createElement("li");
+            answerElement.classList.add("answers");
+            answerElement.textContent = answer;
+            answerElement.id = index + 1;
+            answerElement.addEventListener("click", this.checkAnswer)
     
-   
+            questionAnswer.append(answerElement);
+        });
 
-    // deux.addEventListener('click', ()=>{
-    //     zikDeux.play();
-    // })
-    // trois.addEventListener('click', ()=>{
-    //     zikTrois.play();
-    // })
-    // quatre.addEventListener('click', ()=>{
-    //     zikQuatre.play();
-    // })
-    // cinq.addEventListener('click', ()=>{
-    //     zikCinq.play();
-    // })
-    // six.addEventListener('click', ()=>{
-    //     zikSix.play();
-    // })
-    // sept.addEventListener('click', ()=>{
-    //     zikSept.play();
-    // })
-    // huit.addEventListener('click', ()=>{
-    //     zikHuit.play();
-    // })
-    // neuf.addEventListener('click', ()=>{
-    //     zikNeuf.play();
-    // })
-    // dix.addEventListener('click', ()=>{
-    //     zikDix.play();
-    // })
+        // Fonction pour voir à combien de question on est sur le total de questions présents
+        let questionNumber = document.createElement("h4");
+        questionNumber.classList.add("avancement_question");
+        questionNumber.textContent = "Questions : " + indexQuestion + "/" + nbrOfQuestions;
 
-let reponse1 = document.getElementById("anim_rep1");
-let reponse2 = document.getElementById("anim_rep2");
-let reponse3 = document.getElementById("anim_rep3");
-let reponse4 = document.getElementById("anim_rep4");
-let reponse5 = document.getElementById("anim_rep5");
-let reponse6 = document.getElementById("anim_rep6");
-let reponse7 = document.getElementById("anim_rep7");
-let reponse8 = document.getElementById("anim_rep8");
-let reponse9 = document.getElementById("anim_rep9");
-let reponse10 = document.getElementById("anim_rep10");
+        questions_screen.append(questionNumber);
 
-let repUser1 = document.getElementById("input1");
-let repUser2 = document.getElementById("input2");
-let repUser3 = document.getElementById("input3");
-let repUser4 = document.getElementById("input4");
-let repUser5 = document.getElementById("input5");
-let repUser6 = document.getElementById("input6");
-let repUser7 = document.getElementById("input7");
-let repUser8 = document.getElementById("input8");
-let repUser9 = document.getElementById("input9");
-let repUser10 = document.getElementById("input10");
+        questions_screen.append(questionAnswer);
+    }
 
-let option1= document.getElementById("option1");
+    this.addAnswer = function(answer) {
+        this.answers.push(answer);
+    },
 
-let option2= document.getElementById("option2");
+    // Ici on va checker la réponse correcte avec une écoute d'évènement :
+    this.checkAnswer = (e) => { 
+        let answerSelect = e.target;
+        if(this.isCorrectAnswer(answerSelect.id)) {
+            answerSelect.classList.add("answersCorrect");
+            quiz.nbrCorrects++;
+        }
+        else {
+            answerSelect.classList.add("answersWrong");
+            let RightAnswer = document.getElementById(this.answerCorrect);
+            RightAnswer.classList.add("answersCorrect");
+        }
 
-let option3 = document.getElementById("option3");
-let option4 = document.getElementById("option4");
-let option5 = document.getElementById("option5");
-let option6 = document.getElementById("option6");
-let option7 = document.getElementById("option7");
-let option8 = document.getElementById("option8");
-let option9 = document.getElementById("option9");
-let option10 = document.getElementById("option10");
+        // Mise en place d'une fonction Timeout pour passer à la prochaine question, timer d'une seconde après le click sur un élément
+        setTimeout(function() {
+            questions_screen.textContent = '';
+            quiz.indexCurrentQuestion++;
+            quiz.displayCurrentQuestion();
+        }, 2000);
+    }
+
+    // Si la réponse choisit par le user est égale à la réponse correcte retourner True sinon False
+    this.isCorrectAnswer = function(answerUser) {
+        if(answerUser == this.answerCorrect) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+};
 
 
+// On va récupérer notre fonction Quiz pour implémenter ses données dans ses arguments 
+// Partie Création des mes données de Questions :
+let quiz = new Quiz();
 
-const opt = document.querySelectorAll('.opt');
-
-let buto1 = document.getElementById("boutonValidation1");
-
-let buto2 = document.getElementById("boutonValidation2");
-let buto3 = document.getElementById("boutonValidation3");
-let buto4 = document.getElementById("boutonValidation4");
-let buto5 = document.getElementById("boutonValidation5");
-let buto6 = document.getElementById("boutonValidation6");
-let buto7 = document.getElementById("boutonValidation7");
-let buto8 = document.getElementById("boutonValidation8");
-let buto9 = document.getElementById("boutonValidation9");
-let buto10 = document.getElementById("boutonValidation10");
-
-let search = document.getElementById("searchResult");
-
-let un = document.getElementById("Petit Papa Noël");
-let deux = document.getElementById("La panthère rose");
-let trois = document.getElementById("Frère Jacques");
-let qutre = document.getElementById("Lettre à Elise");
-let cinq = document.getElementById("Raiponce");
-let six = document.getElementById("Les Choristes");
-let sept = document.getElementById("Ce rêve bleu");
-let huit = document.getElementById("Joyeux anniversaire");
-let neuf = document.getElementById("Au clair de la lune");
-let dix = document.getElementById("La panthère rose");
+let question1 = new Question("En quelle année a été composé 'Au clair de la lune' ? ", ["1940", "1860", "1925", "1926"], 2);
+quiz.addQuestion(question1);
 
 
+let question2 = new Question("En quelle année a été composé 'Bella Ciao'? ", ["1942", "1924", "1944", "1936"], 3);
+quiz.addQuestion(question2);
+
+let question3 = new Question("En quelle année a été composé 'Ce reve bleu' ? ", ["1992", "1995", "1991", "1987"], 1);
+quiz.addQuestion(question3);
+
+let question4 = new Question("En quelle année a été composé 'Frere Jacques' ?", ["1940", "1945", "1946", "1942"], 2);
+quiz.addQuestion(question4);
+
+let question5 = new Question("En quelle année a été composé 'Joyeux Anniversaire' ? ", ["1892", "1870", "1910", "1893"], 4);
+quiz.addQuestion(question5);
+
+let question6 = new Question("En quelle année a été composé 'La panthere rose' ? ", ["1963", "1954", "1956", "1940"], 1);
+quiz.addQuestion(question6);
+
+let question7 = new Question("En quelle année a été composé 'Les choristes' ? ", ["2000", "2004", "2002", "2003"], 2);
+quiz.addQuestion(question7);
+
+let question8 = new Question("En quelle année a été composé 'Lettre à Elise' ? ", [" 1755", "1825", "1810", "1910"], 3);
+quiz.addQuestion(question8);
+
+let question9 = new Question("En quelle année a été composé 'Petit papa noel' ", ["1920", "1944", "1943", "1921"], 2);
+quiz.addQuestion(question9);
+
+let question10 = new Question("En quelle année a été composé 'Raiponce' ? ", ["2001", "2012", "2004","2010"], 4);
+quiz.addQuestion(question10);
+
+// Ici je suis obligé de passer par un querySelectroAll pour avoir accès à la fonction ForEach (car le getElement ne le possède pas)
+let NbrQuestion = document.querySelectorAll(".nbrQuestion");
+
+NbrQuestion.forEach(function(NbrQuestion) {
+    NbrQuestion.textContent = quiz.questions.length;
+});
 
 
-// buto2.onclick = function ()  {
-//     if(repUser2.value == reponse2.innerText){
-//         repUser2.value = "✔" ;
-//         point+=1;
-//     } else {
-//         repUser2.value = "❌" + reponse2.innerText;
-//         faux+=1;
-//     }
-//     console.log(point);  
-// }
+// Fonction servant à lancer le questionnaire en enlevant la page d'introduction du quiz et en mettant la première question
+function startQuestions() {
+    header_screen.style.display = "none";
+    questions_screen.style.display = "block";
 
-// buto3.onclick = function ()  {
-//     if(repUser3.value == reponse3.innerText){
-//         repUser3.value = "✔" ;
-//         point+=1;
-//     } else {
-//         repUser3.value = "❌" + reponse3.innerText;
-//         faux+=1;
-//     }
-//     console.log(point);  
-// }
-// buto4.onclick = function ()  {
-//     if(repUser4.value == reponse4.innerText){
-//         repUser4.value = "✔";
-//         point+=1;
-//     } else {
-//         repUser4.value = "❌" + reponse4.innerText;
-//         faux+=1;
-//     }
-//     console.log(point);  
-// }
-// buto5.onclick = function ()  {
-//         if(repUser5.value == reponse5.innerText){
-//         repUser5.value = "✔";
-//         point+=1;
-//     } else {
-//         repUser5.value = "❌" + reponse5.innerText;
-//         faux+=1;
-//     }
-//     console.log(point);  
-// }
-// buto6.onclick = function ()  {
-//     if(repUser6.value == reponse6.innerText){
-//         repUser6.value = "✔";
-//         point+=1;
-//     } else {
-//         repUser6.value = "❌" + reponse6.innerText;
-//         faux+=1;
-//     }
-//     console.log(point);  
-// }
-// buto7.onclick = function ()  {
-//     if(repUser7.value == reponse7.innerText){
-//         repUser7.value = "✔";
-//         point+=1;
-//     } else {
-//         repUser7.value = "❌" + reponse7.innerText;
-//         faux+=1;
-//     }
-//     console.log(point);  
-// }
-// buto8.onclick = function ()  {
-//     if(repUser8.value == reponse8.innerText){
-//         repUser8.value = "✔";
-//         point+=1;
-//     } else {
-//         repUser8.value = "❌" + reponse8.innerText;
-//         faux+=1;
-//     }
-//     console.log(point);  
-// }
-// buto9.onclick = function ()  {
-//     if(repUser9.value == reponse9.innerText){
-//         repUser9.value = "✔";
-//         point+=1;
-//     } else {
-//         repUser9.value = "❌" + reponse9.innerText;
-//         faux+=1;
-//     }
-//     console.log(point);  
-// }
-// buto10.onclick = function ()  {
-//     if(repUser10.value == reponse10.innerText){
-//         repUser10.value = "✔";
-//         point+=1;
-//     } else {
-//         repUser10.value = "❌" + reponse10.innerText;
-//         faux+=1;
-//     }
-     
-// }
-// }
-// console.log(nbBonneRep.innerText);
+    quiz.displayCurrentQuestion();
+}
+
+
+// Récupérer le bouton dans mon html avec le ElementById car le ElementsByClassName n'a pas le addEventListener)
+let btn_start = document.getElementById("btn_start");
+btn_start.addEventListener("click", startQuestions);
+
+
+    

@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="public/assets\css\style.css">
-    <title>Document</title>
-</head>
+{% extends 'templates/templateSpian.twig'%}
+{% block title %} Lecteur musique {% endblock %}
+{% block header %}{% endblock %}
+{% block contentHome %}
 <body>
   <a href="ecoute"><img class="img1" src="public\assets\images\retour 11.png" alt=""></a>
   <h1 class="titleZik">Cliquez sur le titre que vous désirez écouter!!!</h1>
@@ -26,3 +21,4 @@
     <script src="public\assets\js\lecteur.js"></script> 
 </body>
 </html>
+{% endblock %}

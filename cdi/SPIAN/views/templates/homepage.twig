@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <a href="./"><img class="img1" src="public\assets\images\retour 11.png" alt=""></a>
-    <link rel="stylesheet" href="public/assets\css\style.css">
-     <title>Easy Piano🎹 | Creation</title>
-</head>
-
-<header>
+{% extends 'templates/templateSpian.twig'%}
+{% block title %} Homepage {% endblock %}
+{% block contentHome %}
+    <header>
    <div class="title">
             {% for humains in humain %}
                 <h1 >Welcome {{ (humain[2].getHumain_login()) }}</h1>
@@ -47,3 +39,4 @@
     <script src="public\assets\js\main.js"></script>
 </body>
 </html> 
+{% endblock %}

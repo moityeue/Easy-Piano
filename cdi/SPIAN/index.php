@@ -16,7 +16,7 @@ require_once  __DIR__ .'/../vendor/altorouter/altorouter/AltoRouter.php';
 $router = new AltoRouter();
 $router->setBasePath($dossier_server_path.'/cdi/'.$_SESSION['outil_id']);
 
-// $router->map('GET', '/login', 'ControllerSihumain#allhumains_login', 'login_page');//ok//
+$router->map('GET', '/login', 'ControllerSihumain#allhumains_login', 'login_page');//ok//
 
 // $router->map('GET', '/register', 'ControllerSihumain#allhumains_register', 'register_page');//ok//
 

@@ -1,11 +1,11 @@
 {% extends 'templates/templateSpian.twig'%}
 {% block title %} Ecoute Musicale {% endblock %}
 {% block contentHome %}
-         <nav class="nav">
+  <a href="ecoute"><img class="img1" src="public\assets\images\retour 11.png" alt=""></a>
+        <nav class="nav">
               <a class="main_pages1" href="./"><p class="link">Creation</p></a>
               <a class="main_pages2" href="oreille"><p class="link">Oreille</p></a>
-          </div>
-      </nav>
+        </nav>
     </div>  
     <div class="main_content">
         <div id="header_screen" class="header_screen">
@@ -14,20 +14,18 @@
             <div>
                 <button id="btn_start" class="start"> Commencer </button>
                 <h1>ou bien...</h1>
-                <a href="theorie">  <button id="musique" class="start" > En musique </button></a>
+                <a href="lecteur">  <button id="musique" class="start" > En musique </button></a>
             </div>
         </div>
-
-        <div id="questions_screen" class="questions_screen">
-            
-        </div>
-
+        <div id="questions_screen" class="questions_screen"></div>
         <div id="result_screen" class="result_screen">
             <h2 class="ecoute"> Résultat </h2>
             <span class="nbrCorrects"> Vous avez <span id="nbrCorrects"> ?? </span> réponses correctes sur <span class="nbrQuestion"> ?? </span> </span>
         </div>
     </div>
-    <script src="public\assets\js\main3.js"></script>
+    <script src="public\assets\js\quiz.js"></script>
 </body>
 </html>
- {% endblock %}
+ {% endblock %} 
+
+

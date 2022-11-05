@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public\assets\css\style.css">
-    <title>Easy Piano🎹 | Register</title>
-</head>
-     {% for humains in humain %}
+{% extends 'templates/templateSpian.twig'%}
+ {% block header %}{% endblock %}
+{% block contentHome %}
+         {% for humains in humain %}
         <pre>
-            <h1> {{ (humains[0].getHumain_login()) }} </h1>
-            <h1> {{ (humains[0].getHumain_password()) }} </h1>
+
         </pre>
     {% endfor %}
 <body> 
     <section class="connexion">
     <h1 class="log">REGISTER</h1>
-    <form action="submit" method="POST" class="form-connexion"> 
+    <form name="submit" method="POST" action="register" class="form-connexion"> 
         <div class="connexion">
             <div class="humain_login">
                 <input type="text" name="humain_login" value="">
@@ -24,7 +17,8 @@
             <div class="humain_password">
                 <input type="text" name="humain_login" value="">
             </div>
-        <input class="submit" type="submit" name="submit">
+        <input  type="submit" class="submit" name="envoi" value="Envoyer">
         </div>
     </form>
-    </section>
+    </section> 
+    {% endblock %}

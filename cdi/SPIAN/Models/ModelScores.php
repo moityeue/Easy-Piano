@@ -12,10 +12,13 @@
       $humains[] = new Sihumain($humain);
     }
 
-    while ($score = $req2->fetch(PDO::FETCH_ASSOC)){
-      $scores[] = new Scores($score);
+    while ($sco = $req2->fetch(PDO::FETCH_ASSOC)){
+      $scores[] = new Scores($sco);
+      $humains[] = new Sihumain($sco);
     }
-
-    return array($scores, $humains);
+    // var_dump($scores);
+    // var_dump($humains);
+    return $scores;
+    return  $humains;
     }
 }

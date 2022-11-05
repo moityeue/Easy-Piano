@@ -4,14 +4,10 @@
 {% block contentHome %}
     <header>
    <div class="title">
-            {% for humains in humain %}
-                <h1 class="title">Welcome {{ (humain[2].getHumain_login()) }}</h1>
-            {% endfor %}
           </div> 
       <div class="entete">
           <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
       </div>
-
 </header>
          <nav class="nav">
               <a class="main_pages1" href="./" ><p class="link">Creation</p></a>
@@ -20,7 +16,7 @@
       </nav>
     </div>  
     <body>
-        {# <h1 class="titles">As tu une bonne oreille musicale</h1> #}
+  
     <div class="box_vizualizer2">
         <h1 class="listNotesName">Voici la liste des notes qui existent: </h1>
         <div class="regles">
@@ -28,15 +24,14 @@
             <p>2: Si tu reconnais la note cliques dessus... </p>
             <p>3: A toi de jouer!!!!</p>
         </div>  
-         <div id="score">
-            <div id="faux">0</div>
-            <div id="juste">0</div>
-        </div> 
+        <p id="nbrNote"></p>
+        <p id="note_screen"></p>
+        <p id="score"></p>
         <div id="horloge"></div>
             <button id="tracks">Jouer</button>
         </div>
             <p  id="reponse"></p>
-    <div class="onclick">
+    <div id="onclick">
         <audio class="click" src="public/assets\sounds2\DO.mp3">do</audio>
         <audio class="click" src="public/assets\sounds2\RE.mp3">ré</audio>
         <audio class="click" src="public/assets\sounds2\MI.mp3">mi</audio>
@@ -45,10 +40,10 @@
         <audio class="click" src="public/assets\sounds2\LA.mp3">la</audio>
         <audio class="click" src="public/assets\sounds2\SI.mp3">si</audio>
     </div>
-    <div class="listNotes">
+    <div class="list_notes">
+
     </div>
     <div id="container" class="container">
-        <p id="question"></p>
         <button  id="do"  id="reponse">do</button>
         <button  id="ré"  id="reponse">ré</button>
         <button  id="mi"  id="reponse">mi</button>
@@ -58,6 +53,11 @@
         <button  id="si"  id="reponse">si</button>
     </div>
    
-    <script src="public\assets\js\main2.js"></script>
+    <script src="public\assets\js\oreille.js"></script>
+    <script src="public\assets\js\ecoute.js"></script>
 
+
+         {% for scores in score %}
+                <h1 >Welcome {{ (score[0].getScore_id()) }}</h1>
+            {% endfor %}
 {% endblock %}

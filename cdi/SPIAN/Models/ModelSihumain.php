@@ -7,7 +7,11 @@ class ModelSihumain extends Model {
     $scores = [];
     while ($hum = $req->fetch(PDO::FETCH_ASSOC)){
       $humains[] = new Sihumain($hum);
+      $scores[] = new Scores($hum);
     }   
+   
     return array($humains, $scores);
   } 
+  
+  // public functions() {
 }

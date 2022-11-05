@@ -16,22 +16,21 @@ require_once  __DIR__ .'/../vendor/altorouter/altorouter/AltoRouter.php';
 $router = new AltoRouter();
 $router->setBasePath($dossier_server_path.'/cdi/'.$_SESSION['outil_id']);
 
-$router->map('GET', '/login', 'ControllerSihumain#allhumains_login', 'login_page');//ok//
+$router->map('GET', '/login', 'ControllerSihumain#humains_login', 'login_page');//ok//
 
-// $router->map('GET', '/register', 'ControllerSihumain#allhumains_register', 'register_page');//ok//
-
-
-$router->map('GET', '/', 'ControllerSihumain#allHumain', 'home_page');//ok//
-
-$router->map('GET', '/piano', 'ControllerSihumain#allHumain3', 'piano_page');//ok//
+$router->map('GET', '/register', 'ControllerSihumain#allhumains_register', 'register_page');//ok//
 
 
-//  $router->map('GET', '/ecoute', 'ControllerSihumain#allHuma', 'pageEcout');
+$router->map('GET', '/', 'ControllerSihumain#humain_accueil', 'home_page');//ok//
 
-$router->map('GET', '/ecoute', 'ControllerMusique#musique', 'pageEcoute');
+$router->map('GET', '/piano', 'ControllerSihumain#humain_piano', 'piano_page');//ok//
 
-  // $router->map('GET', '/theorie', 'ControllerNotes#humain_note', 'pageTheorie');
-  $router->map('GET', '/theorie', 'ControllerNotes#humain_note', 'pageTheori');
+
+ $router->map('GET', '/ecoute', 'ControllerSihumain#humain_ecoute', 'pageEcout');
+
+ $router->map('GET', '/lecteur', 'ControllerMusique#musique_lecteur', 'pageEcoute');
+
+$router->map('GET', '/theorie', 'ControllerNotes#humain_theorie', 'pageTheorie');
 
   $router->map('GET', '/oreille', 'ControllerScores#allscores', 'scores');
 

@@ -1,9 +1,9 @@
-// Récupérer mes 3 blocks div HTML (le header, la div questions et la div result)
+// Récupérer mes 3 blocks div HTML //
 let header_screen = document.getElementById("header_screen");
 let questions_screen = document.getElementById("questions_screen");
 let result_screen = document.getElementById("result_screen");
 
-// Etablir la fonction Quiz permettant d'ajouter des questions et de voir combien de bonnes réponse le user a
+// fonction Quiz //
 function Quiz(){
     this.questions = [];
     this.nbrCorrects = 0;
@@ -14,7 +14,7 @@ function Quiz(){
         this.questions.push(question);
     }
 
-    // Fonction servant à passer à la question suivante s'il y en a une, sinon ça affiche le résultat final 
+    // Fonction résultat final //
     this.displayCurrentQuestion = function() {
         if(this.indexCurrentQuestion < this.questions.length) {
             this.questions[this.indexCurrentQuestion].getElement(
@@ -32,7 +32,7 @@ function Quiz(){
 }
 
 
-// Fonction Question permettant de créer les questions avec le titre, les réponses et la réponse correcte
+// Fonction Question permettant de créer les questions avec le titre, les réponses et la réponse correcte//
 function Question(title, answers, answerCorrect) {
     this.title = title,
     this.answers = answers,
@@ -44,7 +44,7 @@ function Question(title, answers, answerCorrect) {
         questionTitle.classList.add("title_questions");
         questionTitle.textContent = this.title;
 
-        // Le append sert à afficher le html (il existe le after et le prepend si on veut afficher au-dessus ou en-dessous)
+        // afficher le html //
         questions_screen.append(questionTitle);
 
         let questionAnswer = document.createElement("ul");

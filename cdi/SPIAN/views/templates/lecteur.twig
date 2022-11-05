@@ -1,0 +1,38 @@
+{% extends 'templates/templateSpian.twig'%}
+{% block title %} Lecteur musique {% endblock %}
+{% block header %}{% endblock %}
+{% block contentHome %}
+<body>
+  <a href="ecoute"><img class="img1" src="public\assets\images\retour 11.png" alt=""></a>
+  <h1 class="titleZik">Cliquez sur le titre que vous désirez écouter!!!</h1>
+<div class="enZik">
+{% set musiqueLength = musique|length %}
+    <button id="un">{{ (musique[0].getNom_musique()) }}</button>
+    <button id="deux">{{ (musique[1].getNom_musique()) }}</button>
+    <button id="trois">{{ (musique[2].getNom_musique()) }}</button>
+    <button id="quatre">{{ (musique[3].getNom_musique()) }}</button>
+    <button id="cinq">{{ (musique[4].getNom_musique()) }}</button>
+    <button id="six">{{ (musique[5].getNom_musique()) }}</button>
+    <button id="sept">{{ (musique[6].getNom_musique()) }}</button>
+    <button id="huit">{{ (musique[7].getNom_musique()) }}</button>
+    <button id="neuf">{{ (musique[8].getNom_musique()) }}</button>
+    <button id="dix">{{ (musique[9].getNom_musique()) }}</button>
+</div>
+    <script src="public\assets\js\main3.js"></script>
+    <script src="public\assets\js\lecteur.js"></script> 
+</body>
+</html>
+{% endblock %}
+
+
+
+
+{# {% block contentHome %}
+
+         {% for musiques in musique %}
+              
+                <h1 >Welcome {{ (musique[1].getId_musique()) }}</h1>
+                <h1 >Welcome {{ (musique[2].getAnnee_musique()) }}</h1>
+                <h1 >Welcome {{ (musique[3].getCompositeur_musique()) }}</h1>
+            {% endfor %}
+{% endblock %}  #}

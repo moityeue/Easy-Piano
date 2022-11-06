@@ -24,11 +24,9 @@
             <p>2: Si tu reconnais la note cliques dessus... </p>
             <p>3: A toi de jouer!!!!</p>
         </div>  
-        <p id="nbrNote"></p>
-        <p id="note_screen"></p>
-        <p id="score"></p>
         <div id="horloge"></div>
-            <button id="tracks">Jouer</button>
+            <button  id="tracks" >Jouer</button>
+            <input type="text" id="plus" value="0">Nombre de notes jouées</input>
         </div>
             <p  id="reponse"></p>
     <div id="onclick">
@@ -41,16 +39,15 @@
         <audio class="click" src="public/assets\sounds2\SI.mp3">si</audio>
     </div>
     <div class="list_notes">
-
     </div>
     <div id="container" class="container">
-        <button  id="do"  id="reponse">do</button>
-        <button  id="ré"  id="reponse">ré</button>
-        <button  id="mi"  id="reponse">mi</button>
-        <button  id="fa"  id="reponse">fa</button>
-        <button  id="sol" id="reponse">sol</button>
-        <button  id="la"  id="reponse">la</button>
-        <button  id="si"  id="reponse">si</button>
+        <button onclick="buttonClick()" id="do"  id="reponse">do</button>
+        <button onclick="buttonClick()" id="ré"  id="reponse">ré</button>
+        <button onclick="buttonClick()" id="mi"  id="reponse">mi</button>
+        <button onclick="buttonClick()" id="fa"  id="reponse">fa</button>
+        <button onclick="buttonClick()" id="sol" id="reponse">sol</button>
+        <button onclick="buttonClick()" id="la"  id="reponse">la</button>
+        <button onclick="buttonClick()"id="si"  id="reponse">si</button>
     </div>
    
     <script src="public\assets\js\oreille.js"></script>

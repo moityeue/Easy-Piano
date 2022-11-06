@@ -772,11 +772,11 @@ margin-left: 15%;
     left: 80%;
     color:chartreuse;
 }
-#faux {
+#nbr {
     position: absolute;
     top:70%;
     right:80%;
-    color:red;
+    color:rgb(21, 0, 255);
 }
 #juste2 {
     margin-top: 2%;

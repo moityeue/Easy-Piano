@@ -3,7 +3,22 @@ const audioQuiz = document.querySelectorAll('div audio');
 const btnQuiz = document.getElementsByClassName('.notes');
 let playBtnQuiz = document.getElementById("tracks");
 // let audio;
+let i = 0;
+let point = 0;
+function buttonClick() {
+    document.getElementById('plus').value++;
+    if(document.getElementById('plus').value == 10) {
+        playBtnQuiz.style.background = "red";
+        document.getElementById('plus').value = "Nouvelle Partie?", "Appuies sour 'Jouer";
 
+        if(playBtnQuiz.style.background = "red"){
+            setTimeout(function(){
+                document.getElementById('plus').value = "";
+                playBtnQuiz.style.background = "";
+            }, 3000);
+        }
+    } 
+}
 const notes = document.querySelectorAll('.notes');
 const doM = document.querySelector('.do');
 const reM = document.querySelector('.ré');
@@ -16,11 +31,14 @@ let score = document.getElementById("score");
 
 //lecture aléatoire des notes - démarrage du quiz//
 playBtnQuiz.addEventListener('click', (e) =>{
+    for(i = 0; i < 10; i++){
+            playBtnQuiz.addEventListener("click", buttonClick);
     function RandArray(audioQuiz){
     var rand = Math.random()*audioQuiz.length | 0;
     var rValue = audioQuiz[rand];
     return rValue;    
 }
+    }
 playBtnQuiz.onclick = function () {
     function RandArray(audioQuiz){
     var rand = Math.random()*audioQuiz.length | 0;
@@ -63,16 +81,10 @@ function RandArray(audioQuiz){
     return rValue;   
 }
 
-
-
-let juste = 0;
-for (let i=0; i<=7; i++) {
- 
     doB.onclick = function  (e) {
     if(doB.innerText == rValue.innerText){
         doB.style.background = "green";
             reponse.innerHTML = "✔" + "Bravo!!";
-            juste++; 
     } else {
             reponse.innerHTML= "❌" + "Dommage!!!";
             doB.style.background = "red";
@@ -82,12 +94,13 @@ for (let i=0; i<=7; i++) {
         doB.style.background = "";
         reponse.innerHTML = ""; 
      }, 2000);
+     
     }
     reB.onclick = function  (e) {
         if(reB.innerText == rValue.innerText){
             reB.style.background = "green";
             reponse.innerHTML = "✔" + "Bravo!!";
-            juste++; 
+           
         } else {
             reponse.innerHTML= "❌" + "Dommage!!!";
             reB.style.background = "red";
@@ -100,7 +113,6 @@ for (let i=0; i<=7; i++) {
         if(miB.innerText == rValue.innerText){
             miB.style.background = "green";
             reponse.innerHTML = "✔" + "Bravo!!";
-            juste++; 
         } else {
             reponse.innerHTML= "❌" + "Dommage!!!";
             miB.style.background = "red";
@@ -114,7 +126,6 @@ for (let i=0; i<=7; i++) {
         if(faB.innerText == rValue.innerText){
             faB.style.background = "green";
             reponse.innerHTML = "✔" + "Bravo!!";
-            juste++; 
         } else {
             reponse.innerHTML= "❌" + "Dommage!!!";
             faB.style.background = "red";
@@ -128,7 +139,6 @@ for (let i=0; i<=7; i++) {
         if(solB.innerText == rValue.innerText){
             solB.style.background = "green";
             reponse.innerHTML = "✔" + "Bravo!!";
-            juste++; 
         } else {
             reponse.innerHTML= "❌" + "Dommage!!!";
             solB.style.background = "red";
@@ -140,7 +150,6 @@ for (let i=0; i<=7; i++) {
     }
     laB.onclick = function  (e) {
         if(laB.innerText == rValue.innerText){
-            juste++; 
             laB.style.background = "green";
             reponse.innerHTML = "✔" + "Bravo!!";
         } else {
@@ -154,7 +163,6 @@ for (let i=0; i<=7; i++) {
     }
     siB.onclick = function  (e) {
         if(siB.innerText == rValue.innerText){
-            juste++; 
             siB.style.background = "green";
             reponse.innerHTML = "✔" + "Bravo!!";
         } else {
@@ -167,14 +175,20 @@ for (let i=0; i<=7; i++) {
          }, 2000);
         
     }
- 
-}
 
 const rValue = RandArray(audioQuiz);
 let MaudioQuiz = [];
+
 console.log(rValue.innerText);
 });
 
+
+
+// let y = 0;
+// function Click(){
+//     document.getElementById('plus').value = ++y;
+//     console.log(value);
+// }
 
 // let notes = document.getElementById("container");
 // let result = document.getElementById("reponse");

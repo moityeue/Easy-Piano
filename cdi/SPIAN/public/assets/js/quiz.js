@@ -93,7 +93,7 @@ function Question(title, answers, answerCorrect) {
             questions_screen.textContent = '';
             quiz.indexCurrentQuestion++;
             quiz.displayCurrentQuestion();
-        }, 2000);
+        }, 2000)
     }
 
     // Si la réponse choisit par le user est égale à la réponse correcte retourner True sinon False

@@ -31,7 +31,7 @@ playBtn2.addEventListener('mousedown' , () => {
 })                
 //on initialise chaque touches//
 let init = () => {
-    for(let i = 1; i <= 5; i++){
+    for(let i = 1; i <= 3; i++){
         for(let j = 0; j < 7; j++){
            let key = createKey('white', pianoNotes[j], i);
            key.dataset.keyboard = keyboardMap[j + (i-1) * 7];

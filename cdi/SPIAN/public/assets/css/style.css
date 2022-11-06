@@ -308,6 +308,7 @@ nav {
   }
   
   .cta span:nth-child(2) {
+    width: 40px;
       transition: 0.5s;
       margin-right: 0px;
   }
@@ -322,10 +323,7 @@ nav {
     }
   
     span:nth-child(2) {
-      width: 20px;
-      margin-left: 30px;
-      position: relative;
-      top: 12%;
+      width: 100px;
     }
     
   /**************SVG****************/
@@ -408,17 +406,16 @@ nav {
     color: #fff;
     padding: 15px;
     box-sizing: border-box;
-    background: linear-gradient(315deg, transparent 75%, #47A1F3 0)-10px 0,
-    linear-gradient(45deg, transparent 75%, #47A1F3 0)-10px 0,
-    linear-gradient(135deg, #47A1F3 50%, transparent 0) 0 0,
-    linear-gradient(45deg, #47A1F3 50%, #47A1F3 0) 0 0 #47A1F3;
+    background: linear-gradient(#2985DA, #0d4d89);
     background-size: 20px 20px;
 }
 .piano__play-btn, select{
-    font-size: 20px;
+    width: 80%;
+    font-size: 40px;
     border-radius: 10px;
-    margin-left: 38%;
-    margin-top: 15%;
+    margin-left: 10%;
+    margin-top: 12%; 
+    background: linear-gradient(#2985DA, #0d4d89);
 }
 .piano__keyboard {
     width: 100%;
@@ -446,6 +443,10 @@ nav {
     position: absolute;
     top: 0;
     left: -15px;
+}
+.btn_list3 {
+    margin-top: 0.5%;
+    background: linear-gradient(#2985DA, #0d4d89);
 }
 .empty-space {
     position: relative;
@@ -824,14 +825,6 @@ h1 > .listNotesName {
 	margin: auto;
 }
 
-span {
-	display: block;
-	margin: auto;
-	padding-top: 60px;
-	text-align: center;
-	font-size: 20px;
-}
-
 /*recorder*/
 
 .txt_btn {
@@ -1018,6 +1011,8 @@ span {
 
 
 .main_content {
+    height: 50%;
+    width: 50%;
     text-align: center;
 }
 
@@ -1074,13 +1069,13 @@ span {
     border-radius: 5%;
     cursor: pointer;
 }
-
     .start:hover {
         background-color: rgb(26, 119, 177);
     }
 
 
 .header_screen {
+    height: 100%;
     display: block;
 }
 

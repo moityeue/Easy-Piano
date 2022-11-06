@@ -270,6 +270,22 @@ nav {
     font-style: italic;
     letter-spacing: 0.2em;
 }
+.main_pages3 {
+    top: 5%;
+    left: 43%;
+    right: 40%;
+    position: absolute;
+    background-color: #1D7BD1;
+    width: 10%;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    height: 60%;
+    color: #fff;
+    font-size: 90%;
+    font-style: italic;
+    letter-spacing: 0.2em;
+}
 
 .wrapper {
     width: 100%;
@@ -1000,6 +1016,8 @@ h1 > .listNotesName {
     top:40%;
 }
 .main_content {
+    margin-top: 20%;
+    margin-left: -3%;
     height: 50%;
     width: 50%;
     text-align: center;

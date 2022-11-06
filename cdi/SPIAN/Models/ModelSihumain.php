@@ -13,5 +13,4 @@ class ModelSihumain extends Model {
     return array($humains, $scores);
   } 
   
-  // public functions() {
 }

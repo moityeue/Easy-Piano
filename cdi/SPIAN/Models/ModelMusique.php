@@ -9,7 +9,7 @@ class ModelMusique extends Model{
 
         while($mus = $req->fetch(PDO::FETCH_ASSOC)){
             $musiques[] = new Musique($mus);
-        //   var_dump($mus);
+         //var_dump($mus);
         }
         return $musiques;
     }

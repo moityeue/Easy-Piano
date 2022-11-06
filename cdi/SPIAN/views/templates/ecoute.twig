@@ -1,6 +1,13 @@
 {% extends 'templates/templateSpian.twig'%}
 {% block title %} Ecoute-Quiz {% endblock %}
 {% block contentHome %}
+ {% set humainLength = humain %} 
+<pre>
+    <div class="title2">
+{# {% for humains in humain %} #}
+    <h1 > {{ (humain[2].getHumain_login()) }} <br>Es tu pret un petit quiz??</h1>
+</div> 
+</pre>
   <a href="ecoute"><img class="img1" src="public\assets\images\retour 11.png" alt=""></a>
         <nav class="nav">
               <a class="main_pages1" href="./"><p class="link">Creation</p></a>

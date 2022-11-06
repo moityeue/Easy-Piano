@@ -9,7 +9,22 @@ class ModelSihumain extends Model {
       $humains[] = new Sihumain($hum);
       $scores[] = new Scores($hum);
     }   
-   
+ // var_dump($scores);
     return array($humains, $scores);
   } 
+  // public function login () {
+  //   $db = $this->getDb();
+  //   if(isset($_POST['envoi'])){
+  //     if(isset($_POST['humain_login'])){
+  //       $login = $_POST['humain_login'];
+  //       $password = $_POST['humain_password'];
+  //       $hash = password_hash($password, PASSWORD_DEFAULT);
+  //       $req = $db->prepare("SELECT `humain_id`, `humain_login`, `humain_password` FROM `si_humain` WHERE `login` = :login");
+  //       $req->bindparam('login', $_POST['humain_login'], PDO::PARAM_STR);
+  //       $req->execute();
+  //     }
+  //   }
+    
+    
+  // }
 }

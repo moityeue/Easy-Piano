@@ -6,6 +6,7 @@ class ControllerNotes extends   ControllerTwig{
         $manager = new ModelNotes();
         $no = $manager->humain_notes();
         $note = $_POST;
-         echo $twig->render('templates\theorie.twig', ['description' => $no ,'base' => self::$_base ] );
+         echo $twig->render('templates\theorie.twig', ['note' => $no ,'base' => self::$_base ] );
+         
     }
 }

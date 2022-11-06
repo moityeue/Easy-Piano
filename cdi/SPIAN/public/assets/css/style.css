@@ -46,6 +46,27 @@ header {
     color: #FFFFFF;
     color: #11589A;
     }
+    .title2{
+        position: absolute;
+        top: 5%;
+        font-weight: bold;
+        font-size: 2rem;
+        color: transparent;
+        background: #666666;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        width: 100%;
+        text-align: center;
+        left: 0%;
+        transform: scale(0);
+        transform-origin: center;
+        animation: clickAnim 20s ease-in-out;/*l'animation dure 1sec de l'intérieur vers l'extérieur*/
+        color: #FFFFFF;
+        }
+        .title > h1 {
+            width: 100%;
+        }
     .link_piano  {
         position: absolute;
         top: 80%;
@@ -128,6 +149,7 @@ header {
     text-align: center;
     color: #fff;
 }
+
 .titles {
    position: absolute;
    top: 50%;
@@ -190,6 +212,19 @@ header {
     color: #202c2d;
     color: #444444;
     text-shadow: 1px 3px 0 #969696, 1px 1px 5px #aba8a8;
+}
+.welcome4 {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 43%;
+    font-weight: bold;
+    font-size: 2rem;
+    color: transparent;
+    background: #666666;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
 }
 @keyframes glissement {
     from {
@@ -1022,7 +1057,6 @@ h1 > .listNotesName {
     width: 50%;
     text-align: center;
 }
-
 .title {
     font-size: 33px;
     margin-top: 5%;

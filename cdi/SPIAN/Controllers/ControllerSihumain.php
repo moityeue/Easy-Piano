@@ -25,7 +25,7 @@ class ControllerSihumain extends ControllerTwig {
         $twig = ControllerTwig::twigControl();
         $manager = new ModelSihumain();
         $humain = $manager->humain_login();
-        echo $twig->render('templates\ecoute.twig', ['humain_login' => $humain]);
+        echo $twig->render('templates\ecoute.twig', ['humain' => $humain[0], 'scores' => $humain[1], 'base' => self::$_base]);
     }
         
     public static function humains_login(){

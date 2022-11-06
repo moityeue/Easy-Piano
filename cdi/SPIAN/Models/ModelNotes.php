@@ -4,13 +4,12 @@ class ModelNotes extends Model {
         $db = $this->getDb();
         $req = $db->query("SELECT `description_spian`.`note_name`,`note_name`,`id_notes` ,`description_notes`, `english_notes`,`image_notes` FROM `description_spian` ");
 
-        $descriptions =[];
+        $notes =[];
     
         while($no = $req->fetch(PDO::FETCH_ASSOC)){
-            $descriptions[] = new ModelDescription($no);
-              //var_dump($no);
+            $notes[] = new Notes_spian($no);
+             // var_dump($no);
             }
-        return $descriptions;
+        return $no;
     }  
 }
-

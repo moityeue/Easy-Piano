@@ -38,7 +38,7 @@ function Question(title, answers, answerCorrect) {
     this.answers = answers,
     this.answerCorrect = answerCorrect,
 
-    // Mise en place et structuration du HTML et CSS pour mes questions
+    // Mise en place et structuration pour mes questions
     this.getElement = function(indexQuestion, nbrOfQuestions) {
         let questionTitle = document.createElement("h3");
         questionTitle.classList.add("title_questions");
@@ -75,7 +75,7 @@ function Question(title, answers, answerCorrect) {
         this.answers.push(answer);
     },
 
-    // Ici on va checker la réponse correcte avec une écoute d'évènement :
+    // la réponse correcte 
     this.checkAnswer = (e) => { 
         let answerSelect = e.target;
         if(this.isCorrectAnswer(answerSelect.id)) {
@@ -88,7 +88,7 @@ function Question(title, answers, answerCorrect) {
             RightAnswer.classList.add("answersCorrect");
         }
 
-        // Mise en place d'une fonction Timeout pour passer à la prochaine question, timer d'une seconde après le click sur un élément
+        // Mise en place d'une fonction Timeout pour passer à la prochaine question,next question
         setTimeout(function() {
             questions_screen.textContent = '';
             quiz.indexCurrentQuestion++;
@@ -96,7 +96,7 @@ function Question(title, answers, answerCorrect) {
         }, 2000)
     }
 
-    // Si la réponse choisit par le user est égale à la réponse correcte retourner True sinon False
+    // vérification réponse
     this.isCorrectAnswer = function(answerUser) {
         if(answerUser == this.answerCorrect) {
             return true;
@@ -108,8 +108,7 @@ function Question(title, answers, answerCorrect) {
 };
 
 
-// On va récupérer notre fonction Quiz pour implémenter ses données dans ses arguments 
-// Partie Création des mes données de Questions :
+//je crée mes questions//
 let quiz = new Quiz();
 
 let question1 = new Question("En quelle année a été composé 'Au clair de la lune' ? ", ["1940", "1860", "1925", "1926"], 2);
@@ -143,7 +142,6 @@ quiz.addQuestion(question9);
 let question10 = new Question("En quelle année a été composé 'Raiponce' ? ", ["2001", "2012", "2004","2010"], 4);
 quiz.addQuestion(question10);
 
-// Ici je suis obligé de passer par un querySelectroAll pour avoir accès à la fonction ForEach (car le getElement ne le possède pas)
 let NbrQuestion = document.querySelectorAll(".nbrQuestion");
 
 NbrQuestion.forEach(function(NbrQuestion) {
@@ -151,7 +149,7 @@ NbrQuestion.forEach(function(NbrQuestion) {
 });
 
 
-// Fonction servant à lancer le questionnaire en enlevant la page d'introduction du quiz et en mettant la première question
+// démarrage questionnire
 function startQuestions() {
     header_screen.style.display = "none";
     questions_screen.style.display = "block";
@@ -160,7 +158,7 @@ function startQuestions() {
 }
 
 
-// Récupérer le bouton dans mon html avec le ElementById car le ElementsByClassName n'a pas le addEventListener)
+// action start
 let btn_start = document.getElementById("btn_start");
 btn_start.addEventListener("click", startQuestions);
 

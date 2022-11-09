@@ -12,7 +12,7 @@ $_SESSION['outil_id'] = trouve_outil_id($_SERVER["PHP_SELF"]);
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once  __DIR__ .'/../vendor/altorouter/altorouter/AltoRouter.php';
 
-//start alto router
+//start alto router//
 $router = new AltoRouter();
 $router->setBasePath($dossier_server_path.'/cdi/'.$_SESSION['outil_id']);
 
@@ -30,7 +30,9 @@ $router->map('GET', '/piano', 'ControllerSihumain#humain_piano', 'piano_page');/
 
  $router->map('GET', '/lecteur', 'ControllerMusique#musique_lecteur', 'pageEcoute');
 
-$router->map('GET', '/theorie', 'ControllerNotes#humain_theorie', 'pageTheorie');
+ //$router->map('GET', '/theorie', 'ControllerNotes#humain_theorie', 'pageTheorie');
+
+$router->map('GET', '/theorie', 'ControllerDescription#Description', 'pageTheorique');
 
   $router->map('GET', '/oreille', 'ControllerScores#allscores', 'scores');
 

@@ -5,6 +5,7 @@ class ControllerDescription extends ControllerTwig {
         $twig = ControllerTwig::twigControl();
         $manager = new ModelDescription();
         $desc = $manager->humain_descriptions();
+        $description = $_POST;
          echo $twig->render('templates\theorie.twig' , ['description' => $desc, 'base' => self::$_base]); 
     }
 }

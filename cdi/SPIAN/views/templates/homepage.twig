@@ -1,31 +1,52 @@
 {% extends 'templates/templateSpian.twig'%}
 {% block title %} Accueil {% endblock %}
 {% block contentHome %}
-<body>
-    <header>
+   <header>
       <div class="title">
-        {% for humains in humain %}
-            <h1 > {{ (humain[2].getHumain_login()) }} <br>Tu veux essayer ce piano ??</h1>
-        {% endfor %}
+        {% set humainLenght = humain|length  %}
+            <h1 > {{ (humain[2].getHumain_login()) }} <br> Actives tes haut-parleurs🔊</h1>
       </div> 
         <div class="entete">
             <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
         </div>
     </header>
-      <nav class="nav">
-            <a class="main_pages1" href="ecoute"><p class="link">Ecoute-Quiz</p></a>
-            <a class="main_pages2" href="oreille"><p class="link">Oreille</p></a>
-            <a class="main_pages3" href="theorie"><p class="link">Un peu de théorie</p></a>
-      </nav>
+<body>
     </div>     
-    <div class="wrapper">
-  <a class="cta" href="piano">
-    <span> PIANO </span>
-    <span>
-    <img src="public\assets\images\tick-vert-png-3.png" width="60px" height="43px" alt="">
-      </svg>
-    </span> 
-  </a>
+  <div class="wrapper">
+    <a class="cta" href="piano">
+      <span class="home_name"> PIANO </span>
+      <span>
+      <img class="home_menu"  src="public\assets\images\tick-vert-png-3.png" width="60px" height="43px" alt="">
+        </svg>
+      </span> 
+    </a>
+
+    <a class="cta2" href="ecoute">
+      <span class="home_name"> Ecoute </span>
+      <span>
+      <img class="home_menu" src="public\assets\images\tick-vert-png-3.png" width="60px" height="43px" alt="">
+        </svg>
+      </span> 
+    </a>
+    </div>
+    <a class="cta3" href="oreille">
+      <span class="home_name"> Oreille </span>
+      <span>
+      <img class="home_menu" src="public\assets\images\tick-vert-png-3.png" width="60px" height="43px" alt="">
+        </svg>
+      </span> 
+    </a>
+    </div>
+    <a class="cta4" class="cta"href="theorie">
+      <span class="home_name"> Theorie </span>
+      <span>
+      <img class="home_menu" src="public\assets\images\tick-vert-png-3.png" width="60px" height="43px" alt="">
+        </svg>
+      </span> 
+    </a>
+    </div>
+</div>
+
 <body>
    <footer class="footer">
     <p class="name1">Lwase Dev</p>

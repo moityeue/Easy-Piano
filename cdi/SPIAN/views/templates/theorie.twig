@@ -1,11 +1,40 @@
 {% extends 'templates/templateSpian.twig'%}
 {% block title %} Un peu de théorie  {% endblock %}
+{% block nav %} {% endblock %}
 {% block contentHome %}
-{% set noteLength = note|length %}
-    <pre>
-         <pre>
-            {{ dump(note) }}
-         </pre>
 
-    </pre>
+    <div class="title" >
+     <h1>A savoir sur chaque note!!!!</h1>
+      </div> 
+<div class="info_notes">
+   {% set descriptionLength = description|length %}
+   <button id="infos">{{description[0].getNote_name()}}</button>
+   <span class="desc">➯ {{description[0].getDescription_notes()}}</span>
+   <br/>
+
+    <button id="infos">{{description[1].getNote_name()}}</button>
+    <span class="desc"> ➯ {{description[1].getDescription_notes()}}</span>
+    <br>
+
+   <button id="infos">{{description[2].getNote_name()}}</button>
+   <span class="desc">➯ {{description[2].getDescription_notes()}}</span>
+   <br>
+
+   <button id="infos">{{description[3].getNote_name()}}</button>
+   <span class="desc">➯ {{description[3].getDescription_notes()}}</span>
+   <br>
+
+   <button id="infos">{{description[4].getNote_name()}}</button>
+   <span class="desc">➯ {{description[4].getDescription_notes()}}</span>
+   <br>
+
+   <button id="infos">{{description[5].getNote_name()}}</button>
+   <span class="desc">➯ {{description[5].getDescription_notes()}}</span>
+   <br>
+
+   <button id="infos">{{description[6].getNote_name()}}</button>
+   <span class="desc">➯ {{description[6].getDescription_notes()}}</span>
+   <br>
+</div>
+<script src="public\assets\js\theorie.js"></script>
 {% endblock %}

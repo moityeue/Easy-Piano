@@ -9,6 +9,6 @@ class ControllerScores extends ControllerTwig {
         $sco = $manager->humain_scores();
         $score = $_POST;
         
-         echo $twig->render('templates\oreille.twig', ['scores' => $sco, 'scores' => $score]); 
+         echo $twig->render('templates\oreille.twig', ['scores' => $sco[0], 'humain' => $sco[1]]); 
     }
 }

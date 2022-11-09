@@ -1,299 +1,230 @@
-//quiz //
-const audioQuiz = document.querySelectorAll('div audio');
-const btnQuiz = document.getElementsByClassName('.notes');
-let playBtnQuiz = document.getElementById("tracks");
-// let audio;
-let i = 0;
-let point = 0;
-function buttonClick() {
-    document.getElementById('plus').value++;
-    if(document.getElementById('plus').value == 10) {
-        playBtnQuiz.style.background = "red";
-        document.getElementById('plus').value = "Nouvelle Partie?", "Appuies sour 'Jouer";
+let arrayNotes = ['DO', 'RE', 'MI', 'FA', 'SOL', 'LA', 'SI'];
+let arrayNotesRandom = [];
+for (i=0;i<3;i++) {
+    let notesRandom = arrayNotes.sort(()=> Math.random()- 0.5);
+    arrayNotesRandom = arrayNotesRandom.concat(notesRandom);
+}
 
-        if(playBtnQuiz.style.background = "red"){
-            setTimeout(function(){
-                document.getElementById('plus').value = "";
-                playBtnQuiz.style.background = "";
-            }, 3000);
-        }
+console.log(arrayNotesRandom);
+let indice=0;
+let button = document.getElementById('buttonNotes');
+let compte = 0;
+let point = 0;
+let click = 0;
+let plus = document.getElementById('plus');
+let suivant = document.getElementById('suivant');
+
+//faire apparaitre les notes//
+function viewButtonsNote(){
+    for(i=0; i<arrayNotes.length; i++){
+     document.getElementById("buttonNotes").innerHTML +=     
+        '<button onclick="buttonClickNotes(this)" id="'+ arrayNotes[i]+'">'+arrayNotes[i]+'</button>';
     } 
 }
-const notes = document.querySelectorAll('.notes');
-const doM = document.querySelector('.do');
-const reM = document.querySelector('.ré');
-const miM = document.querySelector('.mi');
-const faM = document.querySelector('.fa');
-const solM = document.querySelector('.sol');
-const laM = document.querySelector('.la');
-const siM = document.querySelector('.si');
-let score = document.getElementById("score");
 
-//lecture aléatoire des notes - démarrage du quiz//
-playBtnQuiz.addEventListener('click', (e) =>{
-    for(i = 0; i < 10; i++){
-            playBtnQuiz.addEventListener("click", buttonClick);
-    function RandArray(audioQuiz){
-    var rand = Math.random()*audioQuiz.length | 0;
-    var rValue = audioQuiz[rand];
-    return rValue;    
-}
+ viewButtonsNote();
+
+//récupérer l'audio//
+function viewAudios(){
+    for(i=0; i<arrayNotes.length; i++){
+    document.getElementById("notes").innerHTML += '<audio id="play_' + arrayNotes[i]+'" class="click" src="public/assets/sounds2/' + arrayNotes[i]+'.mp3">'+arrayNotes[i] +'</audio>';
     }
-playBtnQuiz.onclick = function () {
-    function RandArray(audioQuiz){
-    var rand = Math.random()*audioQuiz.length | 0;
-    var rValue = audioQuiz[rand];
-    return rValue;    
+    
 }
+viewAudios();
 
-let MaudioQuiz = [];
-const rValue = RandArray(audioQuiz);
-rValue.play();
-
-for(i= 0 ; i<audioQuiz.length   ; i++){}
-//click notes réponses-Comparaison des deux réponses + points//
-notes.forEach((item) => {
-    item.addEventListener('click', function(e) {
-        if(e.target.id == rValue.innerText){
-            alert('bravo'); 
-            if( e.target.id == rValue.innerText){
-            }
-        }
-    })
-})
-
-}
-//récupération des notes//
-let doB = document.getElementById("do");
-let reB = document.getElementById("ré");
-let miB = document.getElementById("mi");
-let faB = document.getElementById("fa");
-let solB = document.getElementById("sol");
-let laB = document.getElementById("la");
-let siB = document.getElementById("si");
-let notes = document.querySelectorAll('.click');
-
-let reponse= document.getElementById("reponse");
-
-function RandArray(audioQuiz){
-    var rand = Math.random()*audioQuiz.length | 0;
-    var rValue = audioQuiz[rand];
-    return rValue;   
-}
-
-    doB.onclick = function  (e) {
-    if(doB.innerText == rValue.innerText){
-        doB.style.background = "green";
-            reponse.innerHTML = "✔" + "Bravo!!";
-    } else {
-            reponse.innerHTML= "❌" + "Dommage!!!";
-            doB.style.background = "red";
-            
-            
-    }  setTimeout(function() {
-        doB.style.background = "";
-        reponse.innerHTML = ""; 
-     }, 2000);
+//lecture des notes "Jouer"//
+function playAudio(){ 
+    var a = document.getElementById('play_'+arrayNotesRandom[indice]);
+    a.play();
      
+};
+
+//sélectionner la note suivante//
+function Suivant(){
+    indice++;
+    if(indice >= 3*7) indice = 0;
+    for(i=0; i<arrayNotes.length; i++){
+       document.getElementById(arrayNotes[i]).style.background = '';  
     }
-    reB.onclick = function  (e) {
-        if(reB.innerText == rValue.innerText){
-            reB.style.background = "green";
-            reponse.innerHTML = "✔" + "Bravo!!";
-           
-        } else {
-            reponse.innerHTML= "❌" + "Dommage!!!";
-            reB.style.background = "red";
-        } setTimeout(function() {
-            reB.style.background = "";
-            reponse.innerHTML = ""; 
-         }, 2000);
-    }
-    miB.onclick = function  (e) {
-        if(miB.innerText == rValue.innerText){
-            miB.style.background = "green";
-            reponse.innerHTML = "✔" + "Bravo!!";
-        } else {
-            reponse.innerHTML= "❌" + "Dommage!!!";
-            miB.style.background = "red";
-        }
-        setTimeout(function() {
-            miB.style.background = "";
-            reponse.innerHTML = ""; 
-         }, 2000);
-    }
-    faB.onclick = function  (e) {
-        if(faB.innerText == rValue.innerText){
-            faB.style.background = "green";
-            reponse.innerHTML = "✔" + "Bravo!!";
-        } else {
-            reponse.innerHTML= "❌" + "Dommage!!!";
-            faB.style.background = "red";
-        }
-        setTimeout(function() {
-            faB.style.background = "";
-            reponse.innerHTML = ""; 
-         }, 2000);
-    }
-    solB.onclick = function  (e) {
-        if(solB.innerText == rValue.innerText){
-            solB.style.background = "green";
-            reponse.innerHTML = "✔" + "Bravo!!";
-        } else {
-            reponse.innerHTML= "❌" + "Dommage!!!";
-            solB.style.background = "red";
-        }
-        setTimeout(function() {
-            solB.style.background = "";
-            reponse.innerHTML = ""; 
-         }, 2000);
-    }
-    laB.onclick = function  (e) {
-        if(laB.innerText == rValue.innerText){
-            laB.style.background = "green";
-            reponse.innerHTML = "✔" + "Bravo!!";
-        } else {
-            reponse.innerHTML= "❌" + "Dommage!!!";
-            laB.style.background = "red";
-        }
-        setTimeout(function() {
-            laB.style.background = "";
-            reponse.innerHTML = ""; 
-         }, 2000);
-    }
-    siB.onclick = function  (e) {
-        if(siB.innerText == rValue.innerText){
-            siB.style.background = "green";
-            reponse.innerHTML = "✔" + "Bravo!!";
-        } else {
-            reponse.innerHTML= "❌" + "Dommage!!!";
-            siB.style.background = "red";
-        }
-        setTimeout(function() {
-            siB.style.background = "";
-            reponse.innerHTML = ""; 
-         }, 2000);
+    playAudio();
+    suivant.style.display = 'none';
+}
+
+function buttonClickNotes(balise){ 
+   let nom = balise.id;
+    click++;
+    document.getElementById('plus').innerHTML = click + ' votre nombre de clics';
+   if(nom == arrayNotesRandom[indice] ){
+        balise.style.background = 'green';
         
-    }
+     suivant.style.display = 'block';
+    } else {
+    balise.style.background = 'red';
+   }
+   if(click == 10){
+    console.log(click );
+   }
+}
 
-const rValue = RandArray(audioQuiz);
-let MaudioQuiz = [];
+// //quiz //
+// const audioQuiz = document.querySelectorAll('div audio');
+// const btnQuiz = document.getElementsByClassName('.notes');
+// let playBtnQuiz = document.getElementById("tracks");
+// // let audio;
+// let i = 0;
+// let point = 0;
+// function buttonClick() {
+//     document.getElementById('plus').value++;
+//     if(document.getElementById('plus').value == 10) {
+//         playBtnQuiz.style.background = "red";
+//         document.getElementById('plus').value = "Nouvelle Partie?", "Appuies sour 'Jouer";
 
-console.log(rValue.innerText);
-});
-
-
-
-// let y = 0;
-// function Click(){
-//     document.getElementById('plus').value = ++y;
-//     console.log(value);
+//         if(playBtnQuiz.style.background = "red"){
+//             setTimeout(function(){
+//                 document.getElementById('plus').value = "";
+//                 playBtnQuiz.style.background = "";
+//             }, 3000);
+//         }
+//     } 
 // }
 
-// let notes = document.getElementById("container");
-// let result = document.getElementById("reponse");
-// let start = document.getElementById("tracks");
-// let nbrQuestion = document.getElementById("nbrNote");
-// let note_screen = document.getElementById("note_screen");
-
-// let audio = document.getElementById("onclick");
-// // console.log(audio.textContent);
-// // console.log(notes.textContent);
-
-// start.addEventListener('click', (e) => {
-//     for (let i = 0; i <= 7; i++) {
-//         console.log(CurrentNote);
+// //lecture aléatoire des notes - démarrage du quiz//
+// playBtnQuiz.addEventListener('click', (e) =>{
+//     for(i = 0; i < 10; i++){
+//             playBtnQuiz.addEventListener("click", buttonClick);
+//     function RandArray(audioQuiz){
+//     var rand = Math.random()*audioQuiz.length | 0;
+//     var rValue = audioQuiz[rand];
+//     return rValue;    
+// }
 //     }
-// });
+// playBtnQuiz.onclick = function () {
+//     function RandArray(audioQuiz){
+//     var rand = Math.random()*audioQuiz.length | 0;
+//     var rValue = audioQuiz[rand];
+//     return rValue;    
+// }
 
+// let MaudioQuiz = [];
+// const rValue = RandArray(audioQuiz);
+// rValue.play();
+// }
+// //récupération des notes//
+// let doB = document.getElementById("do");
+// let reB = document.getElementById("ré");
+// let miB = document.getElementById("mi");
+// let faB = document.getElementById("fa");
+// let solB = document.getElementById("sol");
+// let laB = document.getElementById("la");
+// let siB = document.getElementById("si");
+// let notes = document.querySelectorAll('.click');
 
-// function QuizMusic() {
-//     this.notes = [];
-//     this.audio = [];
-//     this.indexCurrentNote = 0;
-//     this.nbrCorrects = 0;
+// let reponse= document.getElementById("reponse");
 
-//     this.addNote = function(note){
-//         this.notes.push(note.textContent);
+// function RandArray(audioQuiz){
+//     var rand = Math.random()*audioQuiz.length | 0;
+//     var rValue = audioQuiz[rand];
+//     return rValue;   
+// }
+
+//     doB.onclick = function  (e) {
+//     if(doB.innerText == rValue.innerText){
+//         doB.style.background = "green";
+//             reponse.innerHTML = "✔" + "Bravo!!";
+//     } else {
+//             reponse.innerHTML= "❌" + "Dommage!!!";
+//             doB.style.background = "red";
+            
+            
+//     }  setTimeout(function() {
+//         doB.style.background = "";
+//         reponse.innerHTML = ""; 
+//      }, 2000);
+     
 //     }
-
-//     this.displayCurrentNote = function(){
-//         if(this.indexCurrentNote < this.notes.length){
-//             this.notes[this.indexCurrentNote].getElement(this.indexCurrentNote + 1, this.notes.length);
+//     reB.onclick = function  (e) {
+//         if(reB.innerText == rValue.innerText){
+//             reB.style.background = "green";
+//             reponse.innerHTML = "✔" + "Bravo!!";
+           
 //         } else {
-//             alert('bonjour');
-//         }
+//             reponse.innerHTML= "❌" + "Dommage!!!";
+//             reB.style.background = "red";
+//         } setTimeout(function() {
+//             reB.style.background = "";
+//             reponse.innerHTML = ""; 
+//          }, 2000);
 //     }
-// }
-
-// function Note(title , anwers, answersCorrects){
-//     this.title = title,
-//     this.anwers = answers;
-//     this.answers = answersCorrects
-
-//     this.getElement = function(indexNote, nbrOfNotes){
-//         let noteTitle = document.createElement("h3");
-//         noteTitle.classList.add("reponse");
-//         noteTitle.textContent = this.title;
-
-//         result.append(noteTitle);
-
-//         let noteAnswer = document.createElement("ul");
-//         noteAnswer.classList.add("list_notes");
-
-//         this.answers.forEach((answer , index) => {
-//             let answerElement = document.createElement("li");
-//             answerElement.classList.add(answers);
-//             answerElement.textContent = answer;
-//             answerElement.id = index + 1;
-//             answserElement.addEventListener("click",this.chekAnswer);
-//             noteAnswer.appendChild(answerElement);
-//         })
-
-//         let noteNumber = document.createElement("h4");
-//         noteNumber.classList.add("nbrNotes");
-//         noteNumber.textContent = "Note numéro :" + indexNote + "/ " + nbrOfNotes;
-
-//         nbrQuestion.append(noteNumber);
-//         nbrQuestion.append(noteAnswer);
-//     }
-//     this.addAnswer = function(answer){
-//         this.answers.push(anwser);
-//     },
-
-//     this.chekAnswer = (e) => {
-//         let answerSelect = e.target;
-//         if(this.isCorrectAnswer(answerSelect.Id)){
-//             answerSelect.classList.add("juste");
-
-//             quizMusic.nbrCorrects++;
-//         }
-//         else {
-//             answerSelect.classList.add("faux");
-
+//     miB.onclick = function  (e) {
+//         if(miB.innerText == rValue.innerText){
+//             miB.style.background = "green";
+//             reponse.innerHTML = "✔" + "Bravo!!";
+//         } else {
+//             reponse.innerHTML= "❌" + "Dommage!!!";
+//             miB.style.background = "red";
 //         }
 //         setTimeout(function() {
-//             note_screen.textContent = '';
-//             quizMusic.indexCurrentNote++;
-//             quizMusic.displayCurrentNote();
-//         }, 2000);
-
+//             miB.style.background = "";
+//             reponse.innerHTML = ""; 
+//          }, 2000);
+//     }
+//     faB.onclick = function  (e) {
+//         if(faB.innerText == rValue.innerText){
+//             faB.style.background = "green";
+//             reponse.innerHTML = "✔" + "Bravo!!";
+//         } else {
+//             reponse.innerHTML= "❌" + "Dommage!!!";
+//             faB.style.background = "red";
+//         }
+//         setTimeout(function() {
+//             faB.style.background = "";
+//             reponse.innerHTML = ""; 
+//          }, 2000);
+//     }
+//     solB.onclick = function  (e) {
+//         if(solB.innerText == rValue.innerText){
+//             solB.style.background = "green";
+//             reponse.innerHTML = "✔" + "Bravo!!";
+//         } else {
+//             reponse.innerHTML= "❌" + "Dommage!!!";
+//             solB.style.background = "red";
+//         }
+//         setTimeout(function() {
+//             solB.style.background = "";
+//             reponse.innerHTML = ""; 
+//          }, 2000);
+//     }
+//     laB.onclick = function  (e) {
+//         if(laB.innerText == rValue.innerText){
+//             laB.style.background = "green";
+//             reponse.innerHTML = "✔" + "Bravo!!";
+//         } else {
+//             reponse.innerHTML= "❌" + "Dommage!!!";
+//             laB.style.background = "red";
+//         }
+//         setTimeout(function() {
+//             laB.style.background = "";
+//             reponse.innerHTML = ""; 
+//          }, 2000);
+//     }
+//     siB.onclick = function  (e) {
+//         if(siB.innerText == rValue.innerText){
+//             siB.style.background = "green";
+//             reponse.innerHTML = "✔" + "Bravo!!";
+//         } else {
+//             reponse.innerHTML= "❌" + "Dommage!!!";
+//             siB.style.background = "red";
+//         }
+//         setTimeout(function() {
+//             siB.style.background = "";
+//             reponse.innerHTML = ""; 
+//          }, 2000);
+        
 //     }
 
-//     this.isCorrectAnswer = function(answerUser) {
-//         if(answerUser == this.answerCorrect) {
-//             return true;
-//         }
-//         else {
-//             return false;
-//         }
-//     }
-   
-// };
+// const rValue = RandArray(audioQuiz);
+// let MaudioQuiz = [];
 
-// let quizMusic = new QuizMusic();
-
-// let note1 = new Note(audio, ["do", "ré", "mi", "fa", "sol"] , 2);
-
-// quizMusic.addNote(note1);
-// console.log(note1);
+// console.log(rValue.innerText);
+// });

@@ -3,7 +3,7 @@ class ModelMusique extends Model{
     public function musique_quiz(){
 
         $db = $this->getDb();
-        $req = $db->query("SELECT `id_musique`, `nom_musique`, `annee_musique`, `compositeur_musique` FROM `musique` WHERE `id_musique`");
+        $req = $db->query("SELECT `id_musique`, `nom_musique`, `annee_musique`, `compositeur_musique` FROM `cdi_musique` WHERE `id_musique`");
 
     $musiques = [];
 

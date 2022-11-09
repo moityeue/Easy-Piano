@@ -2,59 +2,48 @@
 {% block title %} Oreille Musicale {% endblock %}
 {% block header %}{% endblock %}
 {% block contentHome %}
+{% set scoresLenght = score|length %}
+
     <header>
-   <div class="title">
-          </div> 
+      <div class="title" id="title_oreille" >
+        {# <h1 >Testons un peu ton oreille...</h1> #}
+        <h1 class="score_valeur">Ton dernier score était : {{ (scores.getScore_valeur())}} /10</h1>
+      </div> 
       <div class="entete">
           <img class="img2" src="public\assets\images\Cdi.PNG" alt="">
       </div>
 </header>
-         <nav class="nav">
-              <a class="main_pages1" href="./" ><p class="link">Creation</p></a>
-              <a class="main_pages2" href="ecoute"><p class="link">Ecoute-Quiz</p></a>
-               <a class="main_pages3" href="theorie"><p class="link">Un peu de théorie</p></a>
-          </div>
+   {% block nav %} 
+     <nav class="nav">
+            <a class="main_pages1" href="ecoute"><p class="link">Quiz</p></a>
+            <a class="main_pages2" href="oreille"><p class="link">Oreille</p></a>
+            <a class="main_pages3" href="theorie"><p class="link">Théorie</p></a>
       </nav>
+{% endblock %} 
     </div>  
     <body>
     <div class="box_vizualizer2">
-        <h1 class="listNotesName">Voici la liste des notes qui existent: </h1>
+        <h1 class="listNotesName">Règles du jeu: </h1>
         <div class="regles">
-            <p>1: Cliques sur "Jouer" </p>
-            <p>2: Si tu reconnais la note cliques dessus... </p>
-            <p>3: A toi de jouer!!!!</p>
+            <p class="regle1">1: Cliques sur "  ▶  " pour écouter une note!!</p>
+            <p class="regle2">2: Cliques sur la note qui correspond... </p>
+            <p class="regle3">3: Cliques sur "⏩" pour la note suivante..</p>
+            <p class="regle4">4: Tant que tu n'as pas trouvé...essaie encore!!!</p>
         </div>  
         <div id="horloge"></div>
-            <button  id="tracks" >Suivant</button>
-            <input type="text" id="plus" value="0">Nombre de notes jouées</input>
-        </div>
-            <p  id="reponse"></p>
-    <div id="onclick">
-        <audio class="click" src="public/assets\sounds2\DO.mp3">do</audio>
-        <audio class="click" src="public/assets\sounds2\RE.mp3">ré</audio>
-        <audio class="click" src="public/assets\sounds2\MI.mp3">mi</audio>
-        <audio class="click" src="public/assets\sounds2\FA.mp3">fa</audio>
-        <audio class="click" src="public/assets\sounds2\SOL.mp3">sol</audio>
-        <audio class="click" src="public/assets\sounds2\LA.mp3">la</audio>
-        <audio class="click" src="public/assets\sounds2\SI.mp3">si</audio>
+            <button  id="jouer" onclick="playAudio()""viewAudio()" >▶</button>
+            <div id="notes"></div>
+           
+             <p type="text" id="plus" value="0">0</p>  
+         </div>
     </div>
+     <button  id="suivant"onclick="Suivant()"> Suivant  </button> 
     <div class="list_notes">
     </div>
-    <div id="container" class="container">
-        <button onclick="buttonClick()" id="do"  id="reponse">do</button>
-        <button onclick="buttonClick()" id="ré"  id="reponse">ré</button>
-        <button onclick="buttonClick()" id="mi"  id="reponse">mi</button>
-        <button onclick="buttonClick()" id="fa"  id="reponse">fa</button>
-        <button onclick="buttonClick()" id="sol" id="reponse">sol</button>
-        <button onclick="buttonClick()" id="la"  id="reponse">la</button>
-        <button onclick="buttonClick()"id="si"  id="reponse">si</button>
-    </div>
-   
+     <div id="container" class="container">
+    <div id="buttonNotes" "select()">Sélectionne la bonne note: </div>
+   </div>
+
     <script src="public\assets\js\oreille.js"></script>
-    <script src="public\assets\js\ecoute.js"></script>
 
-
-         {% for scores in score %}
-                <h1 >Welcome {{ (score[0].getScore_id()) }}</h1>
-            {% endfor %}
 {% endblock %}

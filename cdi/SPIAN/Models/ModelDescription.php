@@ -7,8 +7,8 @@ class ModelDescription extends Model {
         $descriptions = [];
 
         while ($desc = $req->fetch(PDO::FETCH_ASSOC)) {{
-            $descriptions[] = new ModelDescription($desc);
-            var_dump($desc);
+            $descriptions[] = new Description_spian($desc);
+            //var_dump($descriptions);
             }  
         }
        return $descriptions;

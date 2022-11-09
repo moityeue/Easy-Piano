@@ -27,12 +27,13 @@ class ControllerSihumain extends ControllerTwig {
         $humain = $manager->humain_login();
         echo $twig->render('templates\ecoute.twig', ['humain' => $humain[0], 'scores' => $humain[1], 'base' => self::$_base]);
     }
-        
+       
     public static function humains_login(){
         $loader = new Twig\Loader\FilesystemLoader('./views');
         $twig = ControllerTwig::twigControl();
         $manager = new ModelSihumain();
         $humain = $manager->humain_login();
+        $hum = $_POST;
         echo $twig->render('templates/login.twig', ['humain' => $humain]);
     }
 

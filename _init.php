@@ -1,8 +1,8 @@
 <?php
 session_start();
-$dossier_server_path = '/php/Easy-Piano';
+$dossier_server_path = '/symfony/Easy-Piano';
 
-$bdd = new PDO('mysql:host=localhost;dbname=stage_spian;charset=utf8','root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=stage_spian;charset=utf8mb4','root', '');
 
 
 function trouve_outil_id($dossier) {
